@@ -167,6 +167,24 @@ body {
   }
 }
 
+.layout-wrapper > main > .mission-statement {
+  background-image: url("../images/ingredientsFaded.PNG");
+  background-color: grey;
+  border: 3px solid black;
+  border-radius: 25px;
+  padding: 5px;
+  margin: 5px 10px 0;
+}
+
+.layout-wrapper > main > .mission-statement h5,
+.layout-wrapper > main > .mission-statement p {
+  text-align: center;
+}
+
+.layout-wrapper > main > .mission-statement p {
+  font-size: 0.75rem;
+}
+
 .layout-wrapper > footer {
   background-color: grey;
 }
@@ -177,16 +195,26 @@ body {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
+  margin: 5px;
 }
 
 .food-menu-wrapper > .item {
-  background-color: orange;
+  background-color: #008c45;
+  color: white;
 }
 
 .food-menu-wrapper > .item > .image {
   height: 200px;
   background-size: cover;
   background-position: center center;
+}
+
+.food-menu-wrapper > .item > .name, .food-menu-wrapper > .item .description, .food-menu-wrapper > .item .prices {
+  font-size: .75rem;
+}
+
+.food-menu-wrapper > .item > .description {
+  margin: 5px;
 }
 
 @media only screen and (min-width: 768px) {

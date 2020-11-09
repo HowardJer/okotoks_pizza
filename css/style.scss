@@ -134,6 +134,23 @@ body {
                 }
             }
         }
+
+        > .mission-statement {
+            background-image: url("../images/ingredientsFaded.PNG");
+            background-color: grey;
+            border: 3px solid black;
+            border-radius: 25px;
+
+            padding: 5px;
+            margin: 5px 10px 0;
+            h5,
+            p {
+                text-align: center;
+            }
+            p {
+                font-size: 0.75rem;
+            }
+        }
     }
     > footer {
         background-color: $color-grey;
@@ -144,13 +161,22 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.25rem;
+    margin: 5px;
 
     > .item {
-        background-color: orange;
+        background-color: $green-flag;
+        color: white;
         > .image {
             height: 200px;
             background-size: cover;
             background-position: center center;
+        }
+
+        > .name, .description, .prices {
+            font-size: .75rem;
+        }
+        > .description {
+            margin: 5px;
         }
     }
 }
