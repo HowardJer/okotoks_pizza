@@ -185,10 +185,6 @@ body {
   font-size: 0.75rem;
 }
 
-.layout-wrapper > footer {
-  background-color: grey;
-}
-
 .food-menu-wrapper {
   display: -ms-grid;
   display: grid;
@@ -219,6 +215,11 @@ body {
 
 .food-menu-wrapper > .item > .prices {
   font-size: .60rem;
+}
+
+footer {
+  background-color: #cd0101;
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -256,10 +257,5 @@ body {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
-}
-
-footer {
-  background-color: #cd0101;
-  color: #cd0101;
 }
 /*# sourceMappingURL=style.css.map */

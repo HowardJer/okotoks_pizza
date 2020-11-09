@@ -152,9 +152,7 @@ body {
             }
         }
     }
-    > footer {
-        background-color: $color-grey;
-    }
+    
 }
 
 .food-menu-wrapper {
@@ -182,6 +180,11 @@ body {
             font-size: .60rem;
         }
     }
+}
+
+footer {
+    background-color: $red-logo;
+    color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -218,10 +221,4 @@ body {
     }
 }
 
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// FOOTER
 
-footer {
-    background-color: $red-logo;
-    color: $red-logo;
-}
