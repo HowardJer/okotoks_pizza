@@ -18,6 +18,7 @@ body {
 .layout-wrapper {
     display: grid;
     grid-template-rows: 90px repeat(4, 1fr) 40px;
+    grid-gap: 10px;
     min-height: 100vh;
 
     > header {
@@ -42,36 +43,29 @@ body {
         .white {
             background-color: white;
 
-           
             h1 {
                 font-size: 0.65rem;
                 text-align: center;
             }
             p {
-                font-size: .9rem;
+                font-size: 0.9rem;
                 text-align: center;
                 font-family: pacifico;
             }
             .phone {
                 text-align: center;
-                font-size: .75rem;
+                font-size: 0.75rem;
                 font-weight: bolder;
                 #phone-underline {
-                color: black
+                    color: black;
                 }
-
-
             }
         }
 
-
-
-
-
-     
-
-        .navigation {
-            justify-self: end;
+        .red-navigation {
+            justify-self: center;
+            background-color: $red-logo;
+            padding: 33px 30px;
 
             position: relative;
             .menu {
@@ -108,7 +102,38 @@ body {
     }
 
     > main {
-        background-color: $color-lightgrey;
+        background-color: lightgrey;
+
+        > .free-delivery {
+            background-color: $red-logo;
+            border: 3px solid black;
+            margin: 0 30px;
+            h3,
+            h4 {
+                text-align: center;
+                color: white;
+            }
+            h3 {
+                animation: blinkingH3 2s infinite;
+            }
+            @keyframes blinkingH3 {
+                0% {
+                    color: white;
+                }
+                49% {
+                    color: white;
+                }
+                60% {
+                    color: transparent;
+                }
+                99% {
+                    color: transparent;
+                }
+                100% {
+                    color: white;
+                }
+            }
+        }
     }
     > footer {
         background-color: $color-grey;

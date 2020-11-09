@@ -14,6 +14,7 @@ body {
   display: grid;
   -ms-grid-rows: 90px (1fr)[4] 40px;
       grid-template-rows: 90px repeat(4, 1fr) 40px;
+  grid-gap: 10px;
   min-height: 100vh;
 }
 
@@ -52,14 +53,14 @@ body {
 }
 
 .layout-wrapper > header .white p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: center;
   font-family: pacifico;
 }
 
 .layout-wrapper > header .white .phone {
   text-align: center;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: bolder;
 }
 
@@ -67,13 +68,15 @@ body {
   color: black;
 }
 
-.layout-wrapper > header .navigation {
-  -ms-grid-column-align: end;
-      justify-self: end;
+.layout-wrapper > header .red-navigation {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #cd0101;
+  padding: 33px 30px;
   position: relative;
 }
 
-.layout-wrapper > header .navigation .menu {
+.layout-wrapper > header .red-navigation .menu {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -88,7 +91,7 @@ body {
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
-.layout-wrapper > header .navigation .hamburger-button {
+.layout-wrapper > header .red-navigation .hamburger-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -98,17 +101,70 @@ body {
   cursor: pointer;
 }
 
-.layout-wrapper > header .navigation .hamburger-button:checked ~ .menu {
+.layout-wrapper > header .red-navigation .hamburger-button:checked ~ .menu {
   -webkit-transform: none;
           transform: none;
 }
 
-.layout-wrapper > header .navigation .hamburger-button:checked ~ .fa-bars:before {
+.layout-wrapper > header .red-navigation .hamburger-button:checked ~ .fa-bars:before {
   content: "\f00d";
 }
 
 .layout-wrapper > main {
   background-color: lightgrey;
+}
+
+.layout-wrapper > main > .free-delivery {
+  background-color: #cd0101;
+  border: 3px solid black;
+  margin: 0 30px;
+}
+
+.layout-wrapper > main > .free-delivery h3,
+.layout-wrapper > main > .free-delivery h4 {
+  text-align: center;
+  color: white;
+}
+
+.layout-wrapper > main > .free-delivery h3 {
+  -webkit-animation: blinkingH3 2s infinite;
+          animation: blinkingH3 2s infinite;
+}
+
+@-webkit-keyframes blinkingH3 {
+  0% {
+    color: white;
+  }
+  49% {
+    color: white;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes blinkingH3 {
+  0% {
+    color: white;
+  }
+  49% {
+    color: white;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
 }
 
 .layout-wrapper > footer {
