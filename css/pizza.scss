@@ -100,7 +100,7 @@ body {
   }
 }
 
-// set up delivery/social media row  /////////////////////////////////
+// set up delivery/social media row
 
 .delivery {
   display: grid;
@@ -108,12 +108,9 @@ body {
   border: 3px solid black;
   box-shadow: 3px 5px black;
   margin-top: 7px;
-
   .icons {
-    display: block;
     width: 40px;
-    padding-top: 8px;
-    margin: 0 auto 0 auto;
+    padding-top: 13px;
   }
   background-color: white;
 
@@ -121,48 +118,20 @@ body {
     background-color: rgb(205, 1, 1);
     max-height: 57px;
     color: white;
-    h5,
-    h3 {
-      text-align: center;
+    .eat-in {
+      font-size: 1.25rem;
     }
+    .blink {
+      font-size: 1.6rem;
+    }
+  }
 
-    .blinking {
-      animation: blinkingText 2s infinite;
-    }
-    @keyframes blinkingText {
-      0% {
-        color: white;
-      }
-      49% {
-        color: white;
-      }
-      60% {
-        color: transparent;
-      }
-      99% {
-        color: transparent;
-      }
-      100% {
-        color: white;
-      }
+  .blink {
+    animation: blinker 2s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
     }
   }
 }
-
-    //  start food 
-.menuWrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.25rem;
-  
-
-  > .item {
-      background-color: orange;
-      > .image {
-          height: 200px;
-          background-size: cover;
-          background-position: center center;
-      }
-  }
-}
-
