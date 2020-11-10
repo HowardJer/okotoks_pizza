@@ -176,10 +176,14 @@ h1 {
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
   margin-top: 7px;
+  text-align: center;
   > .item {
     background-color: $greenFlag;
-    font-size: .75rem;
+    font-size: .70rem;
     color: white;
+    .prices {
+      font-size: .60rem;
+    }
     > .image {
       height: 200px;
       background-size: cover;

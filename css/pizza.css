@@ -194,12 +194,17 @@ h1 {
       grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
   margin-top: 7px;
+  text-align: center;
 }
 
 .menuWrapper > .item {
   background-color: #008c45;
-  font-size: .75rem;
+  font-size: .70rem;
   color: white;
+}
+
+.menuWrapper > .item .prices {
+  font-size: .60rem;
 }
 
 .menuWrapper > .item > .image {
