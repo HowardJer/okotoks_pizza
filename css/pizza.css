@@ -289,4 +289,10 @@ footer pre {
     width: 80px;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .header .white h6 {
+    font-size: 1.3rem;
+  }
+}
 /*# sourceMappingURL=pizza.css.map */

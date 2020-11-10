@@ -280,11 +280,16 @@ footer {
       }
     }
   }
+}
 
+// // ADAPTING FOR DESKTOP /////////////////////////////////////////////////////
 
-
-
-
-
-
+@media only screen and (min-width: 992px) {
+  .header {
+    .white {
+      h6 {
+        font-size: 1.3rem;
+      }
+    }
+  }
 }
