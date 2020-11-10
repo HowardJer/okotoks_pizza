@@ -159,15 +159,13 @@ h1 {
   text-align: center;
   color: white;
   background-color: $greenFlag;
-  
- 
 }
 .menuNav {
   text-align: center;
   background-color: $greenFlag;
   padding-bottom: 5px;
 
-  a{
+  a {
     // text-decoration: none;
     color: white;
   }
@@ -179,11 +177,19 @@ h1 {
   grid-gap: 0.25rem;
   margin-top: 7px;
   > .item {
-    background-color: orange;
+    background-color: $greenFlag;
+    font-size: .75rem;
+    color: white;
     > .image {
       height: 200px;
       background-size: cover;
       background-position: center center;
+    }
+
+    @media only screen and (max-width: 991px) {
+      .description {
+        display: none;
+      }
     }
   }
 }
