@@ -171,7 +171,7 @@ body {
   }
 }
 
-// set up promotions element  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// set up promotions   ///////////////////////////////////////////////////////////////////////
 
 .specials {
   background-color: $greenFlag;
@@ -199,10 +199,13 @@ body {
       background-position: center center;
     }
 
-    .name1, .price, h4, .name2 {
+    .name1,
+    .price,
+    h4,
+    .name2 {
       text-align: center;
       color: white;
-      font-size: .75rem;
+      font-size: 0.75rem;
     }
 
     .day {
@@ -215,28 +218,40 @@ body {
 
     .price {
       padding-bottom: 5px;
-     
     }
   }
 }
 
-// // set up footer
-// footer {
-//   border: 3px solid black;
-//   background-color: rgb(205, 1, 1);
-//   color: white;
-//   text-align: center;
-//   pre {
-//     font-size: 1.5rem;
-//     font-weight: bold;
-//     font-family: sans-serif;
-//   }
-// }
+// set up location  //////////////////////////////////////////////////////////////
 
-// #underlines-footer {
-//   text-decoration: none;
-//   color: white;
-// }
+.locationGoogle {
+  background-color: $greenFlag;
+  border: 3px solid black;
+  margin-top: 10px;
+}
+iframe {
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+// set up footer
+footer {
+  border: 3px solid black;
+  background-color: rgb(205, 1, 1);
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  pre {
+    font-size: .75rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+}
+
+#underlinesFooter {
+  text-decoration: none;
+  color: white;
+}
 // // ends mobile settings --------------------------------------------------------------
 
 // // ADAPTING FOR TABLET ================================================================
