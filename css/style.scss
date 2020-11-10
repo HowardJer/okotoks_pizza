@@ -47,12 +47,14 @@ body {
 
   .green {
     .logo {
-      max-height: 70px;
-      padding-top: 8px;
+      display: block;
+      margin: 0 auto 0 auto;
+      max-height: 60px;
     }
     background-color: green;
     max-height: auto;
     min-width: 60px;
+    border-right: 2px solid black;
   }
 
   .white {
@@ -69,7 +71,7 @@ body {
       // padding-bottom: 0;
     }
     h5 {
-      font-size: 1.2rem;
+      font-size: 0.75rem;
       font-family: "Pacifico";
     }
     #activePhone {
@@ -77,7 +79,7 @@ body {
       font-weight: bold;
     }
     @media only screen and (max-width: 767px) {
-      p {
+      .regPhone {
         display: none;
       }
     }
@@ -88,6 +90,7 @@ body {
     max-height: auto;
     min-width: 60px;
     font-size: 1rem;
+    border-left: 2px solid black;
     #menuId {
       color: white;
       text-decoration: none;
@@ -242,7 +245,7 @@ footer {
   text-align: center;
   margin-top: 10px;
   pre {
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: bold;
     font-family: sans-serif;
   }
@@ -252,35 +255,48 @@ footer {
   text-decoration: none;
   color: white;
 }
-// // ends mobile settings --------------------------------------------------------------
 
-// // ADAPTING FOR TABLET ================================================================
+// ADAPTING FOR TABLET /////////////////////////////////////////////////////////
 
-// @media only screen and (min-width: 321px) {
-//   // overall look
-//   body {
-//     background-color: lightgrey;
-//     background-image: url("../images/pepperonipizza.jpg");
-//     background-size: cover;
-//   }
+@media only screen and (min-width: 321px) {
+  body {
+    background-color: lightgrey;
+    background-image: url("../images/pepperonipizza.jpg");
+    background-size: cover;
+  }
 
-//   // overall grid container
-//   .grid-container {
-//     grid-gap: 50px;
-//     grid-template-rows: 120px 80px 140px 1fr 60px;
-//   }
+  .grid-container {
+    grid-gap: 50px;
+    grid-template-rows: 120px repeat(4, 1fr) 60px;
+  }
+
+  .header {
+    border: 5px solid black;
+    height: 110px;
+    .white {
+      h6 {
+        font-size: 1.2rem;
+      }
+      h5 {
+        font-size: 1.4rem;
+      }
+
+      #activePhone {
+        display: none;
+      }
+      @media only screen and (min-width: 767px) {
+        .regPhone {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
 // }
 
-//   // Header
-//   .header {
-//     border: 5px solid black;
-//     max-height: 109.5px;
-//     .green {
-//       .logo {
-//       max-height: 90px;
-//       padding-top: 5px;
-//        }
-//       }
+// }
 
 //       .white {
 //         h1 {
