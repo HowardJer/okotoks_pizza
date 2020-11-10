@@ -109,8 +109,10 @@ body {
 }
 
 .delivery .icons {
+  display: block;
   width: 40px;
-  padding-top: 13px;
+  padding-top: 8px;
+  margin: 0 auto 0 auto;
 }
 
 .delivery .center {
@@ -119,28 +121,88 @@ body {
   color: white;
 }
 
-.delivery .center .eat-in {
-  font-size: 1.25rem;
+.delivery .center h5,
+.delivery .center h3 {
+  text-align: center;
 }
 
-.delivery .center .blink {
-  font-size: 1.6rem;
+.delivery .center .blinking {
+  -webkit-animation: blinkingText 2s infinite;
+          animation: blinkingText 2s infinite;
 }
 
-.delivery .blink {
-  -webkit-animation: blinker 2s linear infinite;
-          animation: blinker 2s linear infinite;
-}
-
-@-webkit-keyframes blinker {
-  50% {
-    opacity: 0;
+@-webkit-keyframes blinkingText {
+  0% {
+    color: white;
+  }
+  49% {
+    color: white;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: white;
   }
 }
 
-@keyframes blinker {
-  50% {
-    opacity: 0;
+@keyframes blinkingText {
+  0% {
+    color: white;
   }
+  49% {
+    color: white;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+
+h1 {
+  font-family: pacifico;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  background-color: #008c45;
+}
+
+.menuNav {
+  text-align: center;
+  background-color: #008c45;
+  padding-bottom: 5px;
+}
+
+.menuNav a {
+  color: white;
+}
+
+.menuWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.25rem;
+  margin-top: 7px;
+}
+
+.menuWrapper > .item {
+  background-color: orange;
+}
+
+.menuWrapper > .item > .image {
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
 }
 /*# sourceMappingURL=pizza.css.map */
