@@ -210,6 +210,7 @@ body {
 
 .specials > .item {
   background-color: #008c45;
+  border-bottom-style: dashed;
 }
 
 .specials > .item > .image {
@@ -224,7 +225,15 @@ body {
   font-size: .75rem;
 }
 
+.specials > .item .day {
+  margin-top: 10px;
+}
+
 .specials > .item .name2 {
   margin-top: 5px;
+}
+
+.specials > .item .price {
+  padding-bottom: 5px;
 }
 /*# sourceMappingURL=style.css.map */

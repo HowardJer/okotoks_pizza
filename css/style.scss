@@ -191,6 +191,8 @@ body {
 
   > .item {
     background-color: $greenFlag;
+    border-bottom-style: dashed;
+
     > .image {
       height: 75px;
       background-size: cover;
@@ -203,8 +205,17 @@ body {
       font-size: .75rem;
     }
 
+    .day {
+      margin-top: 10px;
+    }
+
     .name2 {
       margin-top: 5px;
+    }
+
+    .price {
+      padding-bottom: 5px;
+     
     }
   }
 }
