@@ -369,4 +369,22 @@ footer pre {
     font-size: 1.55rem;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .header .white h6 {
+    font-size: 1.5rem;
+  }
+  .specials {
+    margin: 0 200px;
+  }
+  .specials .dailySpecialsign {
+    width: 60%;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+  }
+  .specials > .item > .image {
+    height: 200px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
