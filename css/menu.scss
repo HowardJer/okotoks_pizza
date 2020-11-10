@@ -1,0 +1,224 @@
+$color-lightgrey: lightgrey;
+$color-grey: grey;
+$red-logo: rgb(205, 1, 1);
+$green-flag: rgb(0, 140, 69);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+// MOBILE SET UP /////////////////////////////////////////////////////
+
+.layout-wrapper {
+    display: grid;
+    grid-template-rows: 90px repeat(4, 1fr) 40px;
+    grid-gap: 10px;
+    min-height: 100vh;
+
+    > header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+        border: 3px solid black;
+        padding: 0;
+
+        .green {
+            background-color: $green-flag;
+            border-right: 2px solid black;
+            padding: 0;
+            img {
+                max-height: 84px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .white {
+            background-color: white;
+
+            h1 {
+                font-size: 0.65rem;
+                text-align: center;
+            }
+            p {
+                font-size: 0.9rem;
+                text-align: center;
+                font-family: pacifico;
+            }
+            .phone {
+                text-align: center;
+                font-size: 0.75rem;
+                font-weight: bolder;
+                #phone-underline {
+                    color: black;
+                }
+            }
+        }
+
+        .red-navigation {
+            justify-self: center;
+            background-color: $red-logo;
+            padding: 33px 30px;
+
+            position: relative;
+            .menu {
+                // display: none;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 280px;
+                height: 100vh;
+                background-color: #777;
+                transform: translateX(-100%);
+                transition: transform 0.2s ease-in-out;
+            }
+
+            .hamburger-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 28px;
+                height: 30px;
+                opacity: 0;
+                cursor: pointer;
+
+                &:checked {
+                    ~ .menu {
+                        transform: none;
+                    }
+                    ~ .fa-bars:before {
+                        content: "\f00d";
+                    }
+                }
+            }
+        }
+    }
+
+    > main {
+        background-color: lightgrey;
+
+        > .free-delivery {
+            background-color: $red-logo;
+            border: 3px solid black;
+            margin: 0 30px;
+            h3,
+            h4 {
+                text-align: center;
+                color: white;
+            }
+            h3 {
+                animation: blinkingH3 2s infinite;
+            }
+            @keyframes blinkingH3 {
+                0% {
+                    color: white;
+                }
+                49% {
+                    color: white;
+                }
+                60% {
+                    color: transparent;
+                }
+                99% {
+                    color: transparent;
+                }
+                100% {
+                    color: white;
+                }
+            }
+        }
+
+        > .mission-statement {
+            background-image: url("../images/ingredientsFaded.PNG");
+            background-color: grey;
+            border: 3px solid black;
+            border-radius: 25px;
+
+            padding: 5px;
+            margin: 5px 10px 0;
+            h5,
+            p {
+                text-align: center;
+            }
+            p {
+                font-size: 0.75rem;
+            }
+        }
+    }
+    
+}
+
+.food-menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.25rem;
+    margin: 5px;
+
+    > .item {
+        background-color: $green-flag;
+        color: white;
+        > .image {
+            height: 200px;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        > .name, .description, .prices {
+            font-size: .75rem;
+        }
+        > .description {
+            margin: 5px;
+        }
+        >.prices {
+            font-size: .60rem;
+        }
+    }
+}
+
+footer {
+    background-color: $red-logo;
+    color: white;
+}
+
+@media only screen and (min-width: 768px) {
+    .layout-wrapper header {
+        .navigation {
+            order: 2;
+            button {
+                display: none;
+                justify-self: center;
+            }
+            .menu {
+                // display: block;
+                list-style-type: none;
+                // display: flex;
+
+                > li {
+                    margin: 0 1rem;
+                }
+            }
+        }
+        .phone {
+            order: 3;
+            justify-self: end;
+        }
+    }
+
+    .food-menu-wrapper {
+        grid-template-columns: repeat(3.1fr);
+    }
+}
+@media only screen and (min-width: 991px) {
+    .food-menu-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+

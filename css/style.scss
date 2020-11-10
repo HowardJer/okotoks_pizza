@@ -1,224 +1,464 @@
-$color-lightgrey: lightgrey;
-$color-grey: grey;
-$red-logo: rgb(205, 1, 1);
-$green-flag: rgb(0, 140, 69);
+// some variables //////////////////////////////////////////////////////////////
 
+$redLogo: rgb(205, 1, 1);
+$greenFlag: rgb(0, 140, 69);
+$greyL: lightgrey;
+$greyM: darkgrey;
+
+// set up zero points  //////////////////////////////////////////////////////////
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+// set up body & test connection to index.html  ///////////////////////////////////
 
 body {
+  background-color: $greyL;
+}
+
+// set up the grid container  //////////////////////////////////////////////////////
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 80px repeat(4, 1fr) 40px;
+  grid-gap: 10px;
+  padding: 10px;
+  min-height: 100vh;
+  width: 100%;
+  > div {
+    text-align: center;
     font-family: sans-serif;
+  }
 }
 
-// MOBILE SET UP /////////////////////////////////////////////////////
+// set up for mobile size ////////////////////////////////////////////////////////////
 
-.layout-wrapper {
-    display: grid;
-    grid-template-rows: 90px repeat(4, 1fr) 40px;
-    grid-gap: 10px;
-    min-height: 100vh;
+// set up header  ///////////////////////////////
 
-    > header {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        align-items: center;
-        border: 3px solid black;
-        padding: 0;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  border: 3px solid black;
+  padding-bottom: 0;
+  background-color: white;
 
-        .green {
-            background-color: $green-flag;
-            border-right: 2px solid black;
-            padding: 0;
-            img {
-                max-height: 84px;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
-        .white {
-            background-color: white;
-
-            h1 {
-                font-size: 0.65rem;
-                text-align: center;
-            }
-            p {
-                font-size: 0.9rem;
-                text-align: center;
-                font-family: pacifico;
-            }
-            .phone {
-                text-align: center;
-                font-size: 0.75rem;
-                font-weight: bolder;
-                #phone-underline {
-                    color: black;
-                }
-            }
-        }
-
-        .red-navigation {
-            justify-self: center;
-            background-color: $red-logo;
-            padding: 33px 30px;
-
-            position: relative;
-            .menu {
-                // display: none;
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                width: 280px;
-                height: 100vh;
-                background-color: #777;
-                transform: translateX(-100%);
-                transition: transform 0.2s ease-in-out;
-            }
-
-            .hamburger-button {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 28px;
-                height: 30px;
-                opacity: 0;
-                cursor: pointer;
-
-                &:checked {
-                    ~ .menu {
-                        transform: none;
-                    }
-                    ~ .fa-bars:before {
-                        content: "\f00d";
-                    }
-                }
-            }
-        }
+  .green {
+    .logo {
+      max-height: 70px;
+      padding-top: 8px;
     }
+    background-color: green;
+    max-height: auto;
+    min-width: 60px;
+  }
 
-    > main {
-        background-color: lightgrey;
-
-        > .free-delivery {
-            background-color: $red-logo;
-            border: 3px solid black;
-            margin: 0 30px;
-            h3,
-            h4 {
-                text-align: center;
-                color: white;
-            }
-            h3 {
-                animation: blinkingH3 2s infinite;
-            }
-            @keyframes blinkingH3 {
-                0% {
-                    color: white;
-                }
-                49% {
-                    color: white;
-                }
-                60% {
-                    color: transparent;
-                }
-                99% {
-                    color: transparent;
-                }
-                100% {
-                    color: white;
-                }
-            }
-        }
-
-        > .mission-statement {
-            background-image: url("../images/ingredientsFaded.PNG");
-            background-color: grey;
-            border: 3px solid black;
-            border-radius: 25px;
-
-            padding: 5px;
-            margin: 5px 10px 0;
-            h5,
-            p {
-                text-align: center;
-            }
-            p {
-                font-size: 0.75rem;
-            }
-        }
+  .white {
+    background-color: white;
+    max-height: auto;
+    min-width: 100px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    h6 {
+      padding-top: 10px;
+      // margin-bottom: 0;
+      // padding-bottom: 0;
     }
-    
+    h5 {
+      font-size: 1.2rem;
+      font-family: "Pacifico";
+    }
+    #activePhone {
+      color: black;
+      font-weight: bold;
+    }
+    @media only screen and (max-width: 767px) {
+      p {
+        display: none;
+      }
+    }
+  }
+
+  .red {
+    background-color: $redLogo;
+    max-height: auto;
+    min-width: 60px;
+    font-size: 1rem;
+    #menuId {
+      color: white;
+      text-decoration: none;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
 }
 
-.food-menu-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.25rem;
-    margin: 5px;
+// set up delivery/social media row  /////////////////////////////////
 
-    > .item {
-        background-color: $green-flag;
-        color: white;
-        > .image {
-            height: 200px;
-            background-size: cover;
-            background-position: center center;
-        }
+.delivery {
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  border: 3px solid black;
+  box-shadow: 3px 5px black;
+  margin-top: 7px;
 
-        > .name, .description, .prices {
-            font-size: .75rem;
-        }
-        > .description {
-            margin: 5px;
-        }
-        >.prices {
-            font-size: .60rem;
-        }
-    }
-}
+  .icons {
+    width: 40px;
+    padding-top: 10px;
+  }
+  background-color: white;
 
-footer {
-    background-color: $red-logo;
+  .center {
+    background-color: rgb(205, 1, 1);
+    max-height: 57px;
     color: white;
-}
-
-@media only screen and (min-width: 768px) {
-    .layout-wrapper header {
-        .navigation {
-            order: 2;
-            button {
-                display: none;
-                justify-self: center;
-            }
-            .menu {
-                // display: block;
-                list-style-type: none;
-                // display: flex;
-
-                > li {
-                    margin: 0 1rem;
-                }
-            }
-        }
-        .phone {
-            order: 3;
-            justify-self: end;
-        }
+    h5,
+    h3 {
+      text-align: center;
     }
 
-    .food-menu-wrapper {
-        grid-template-columns: repeat(3.1fr);
+    .blinking {
+      animation: blinkingText 2s infinite;
     }
-}
-@media only screen and (min-width: 991px) {
-    .food-menu-wrapper {
-        grid-template-columns: repeat(4, 1fr);
+    @keyframes blinkingText {
+      0% {
+        color: white;
+      }
+      49% {
+        color: white;
+      }
+      60% {
+        color: transparent;
+      }
+      99% {
+        color: transparent;
+      }
+      100% {
+        color: white;
+      }
     }
+  }
 }
 
+//  set up for mission statement  //////////////////////////////////////////////////////////
 
+.missionStatement {
+  border: 5px solid black;
+  background-image: url("../images/ingredientsfaded.png");
+  background-color: #cd853f;
+  background-size: cover;
+  margin: 10px 15px 0 10px;
+  border-radius: 15px;
+  box-shadow: 3px 5px black;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    color: black;
+    font-style: italic;
+
+    font-size: 1rem;
+  }
+}
+// // set up promotions element  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// .promotions {
+//   border: 7px solid black;
+//   box-shadow: 3px 5px black;
+//   background-color: green;
+
+//   .daily-special {
+//     display: inline;
+//     width: 75%;
+//     height: auto;
+//     margin-top: 10px;
+//     margin-bottom: 3px;
+//     margin-left: -25px;
+//     border: 4px solid black;
+//     box-shadow: 9px 5px black;
+//   }
+
+//   .specials {
+//     background-color: green;
+//     margin-top: 3px;
+
+//     div.relative1 {
+//       position: relative;
+//       // width: 60%;
+//       max-height: 100px;
+//       // p .wings {
+//       //   font-size: rem;
+//       //   text-align: left;
+//       //   > p {
+//       //     text-align: center;
+//       //   }
+//       // }
+//     }
+
+//     div.absolute1 {
+//       position: absolute;
+//     }
+
+//     .wings-float {
+//       float: left;
+//       margin: 0 60px 10px 5px;
+//       width: 35%;
+//       height: auto;
+//       margin-right: 60px;
+//     }
+
+//     img {
+//       display: inline;
+//       width: 35%;
+//       height: auto;
+//       margin-bottom: 3px;
+//       border: 3px solid rgb(205, 1, 1);
+//       margin-top: 5px;
+//     }
+
+//     p,
+//     pre {
+//       font-size: 1.5rem;
+//       font-weight: bold;
+//       text-align: center;
+//       color: white;
+//     }
+
+//     .day {
+//       font-size: 1rem;
+//       text-decoration: underline;
+//     }
+//     hr {
+//       width: 90%;
+//       margin-left: auto;
+//       margin-right: auto;
+//       height: 5px;
+//       background-color: lightgrey;
+//       border: 0;
+//     }
+//   }
+// }
+
+// // set up footer
+// footer {
+//   border: 3px solid black;
+//   background-color: rgb(205, 1, 1);
+//   color: white;
+//   text-align: center;
+//   pre {
+//     font-size: 1.5rem;
+//     font-weight: bold;
+//     font-family: sans-serif;
+//   }
+// }
+
+// #underlines-footer {
+//   text-decoration: none;
+//   color: white;
+// }
+// // ends mobile settings --------------------------------------------------------------
+
+// // ADAPTING FOR TABLET ================================================================
+
+// @media only screen and (min-width: 321px) {
+//   // overall look
+//   body {
+//     background-color: lightgrey;
+//     background-image: url("../images/pepperonipizza.jpg");
+//     background-size: cover;
+//   }
+
+//   // overall grid container
+//   .grid-container {
+//     grid-gap: 50px;
+//     grid-template-rows: 120px 80px 140px 1fr 60px;
+//   }
+// }
+
+//   // Header
+//   .header {
+//     border: 5px solid black;
+//     max-height: 109.5px;
+//     .green {
+//       .logo {
+//       max-height: 90px;
+//       padding-top: 5px;
+//        }
+//       }
+
+//       .white {
+//         h1 {
+//           font-size: 1.75rem;
+//           margin-top: 2px;
+//           padding-bottom: 0px;
+//         }
+//       }
+//       p {
+//         font-size: 5rem;
+//         font-family: "Pacifico";
+//         padding-top: 5px;
+//       }
+//     }
+
+//   p {
+//     font-size: 2rem;
+//     font-family: "Pacifico";
+//     padding-top: 5px;
+//   }
+// }
+
+//     .red {
+//       max-height: 109.5px;
+//       font-size: 1.25rem;
+//       #underlines {
+//         text-decoration: none;
+//         color: white;
+//         font-weight: bold;
+//       }
+//       > div {
+//         .mobile-phone {
+//           display: none;
+//         }
+//         .reg-phone {
+//           color: white;
+//           font-weight: bold;
+//         }
+//       }
+//     }
+//   }
+
+//   // Delivery
+
+//   .delivery {
+//     .icons {
+//       width: 60px;
+//       padding-top: 13px;
+//     }
+//     .center {
+//       max-height: 67px;
+//       pre {
+//         font-size: 2rem;
+//       }
+//     }
+//   }
+
+//   // Promotions
+
+//   .promotions {
+//     margin-left: 200px;
+//     margin-right: 200px;
+//     h3 {
+//       font-size: 1.25rem;
+//       background-color: darkgreen;
+//       text-align: center;
+//       color: white;
+//     }
+
+//     p {
+//       font-size: 1.25rem;
+//       font-weight: bold;
+//       text-align: center;
+//     }
+
+//     img {
+//       width: 70px;
+//       height: auto;
+//     }
+//   }
+
+//   // Footer
+
+//   footer {
+//     border: 5px solid black;
+//     pre {
+//       font-size: 1.25rem;
+//       font-weight: bold;
+//     }
+//   }
+// }
+
+// // ends ipad settings -----------------------------------------------------------
+
+// // ADAPTING FOR DESKTOP =============================================================
+
+// @media only screen and (min-width: 992px) {
+//   // Header
+
+//   .header {
+//     .green {
+//       .logo-green {
+//         max-height: 135px;
+//       }
+//     }
+
+//     .white {
+//       h1 {
+//         font-size: 2.5rem;
+//         margin-top: 2px;
+//       }
+//     }
+
+//     .red {
+//       font-size: 2.5rem;
+//       i {
+//         display: none;
+//       }
+//       li {
+//         display: inline;
+//         font-size: 1.5rem;
+//         color: white;
+//         &:hover {
+//           background-color: white;
+//           color: red;
+//         }
+//       }
+//     }
+//   }
+
+//   .delivery {
+//     .icons {
+//       width: 70px;
+//       padding-top: 7px;
+//     }
+//   }
+
+//   .promotions {
+//     margin-left: 600px;
+//     margin-right: 600px;
+//   }
+//   .promotions {
+//     h3 {
+//       font-size: 2.5rem;
+//       background-color: darkgreen;
+//       text-align: center;
+//       color: white;
+//     }
+
+//     p {
+//       font-size: 1.75rem;
+//       font-weight: bold;
+//       text-align: center;
+//     }
+//     img {
+//       width: 100px;
+//       height: auto;
+//     }
+//   }
+
+//   footer {
+//     border: 5px solid black;
+//     pre {
+//       font-size: 1.35rem;
+//       font-weight: bold;
+//     }
+//   }
+// } //end of adjustin to desktop

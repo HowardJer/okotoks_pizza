@@ -6,256 +6,186 @@
 }
 
 body {
+  background-color: lightgrey;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: 80px (1fr)[4] 40px;
+      grid-template-rows: 80px repeat(4, 1fr) 40px;
+  grid-gap: 10px;
+  padding: 10px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.grid-container > div {
+  text-align: center;
   font-family: sans-serif;
 }
 
-.layout-wrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 90px (1fr)[4] 40px;
-      grid-template-rows: 90px repeat(4, 1fr) 40px;
-  grid-gap: 10px;
-  min-height: 100vh;
-}
-
-.layout-wrapper > header {
+.header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
       grid-template-columns: 1fr 2fr 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border: 3px solid black;
-  padding: 0;
-}
-
-.layout-wrapper > header .green {
-  background-color: #008c45;
-  border-right: 2px solid black;
-  padding: 0;
-}
-
-.layout-wrapper > header .green img {
-  max-height: 84px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.layout-wrapper > header .white {
+  padding-bottom: 0;
   background-color: white;
 }
 
-.layout-wrapper > header .white h1 {
-  font-size: 0.65rem;
+.header .green {
+  background-color: green;
+  max-height: auto;
+  min-width: 60px;
+}
+
+.header .green .logo {
+  max-height: 70px;
+  padding-top: 8px;
+}
+
+.header .white {
+  background-color: white;
+  max-height: auto;
+  min-width: 100px;
   text-align: center;
-}
-
-.layout-wrapper > header .white p {
-  font-size: 0.9rem;
-  text-align: center;
-  font-family: pacifico;
-}
-
-.layout-wrapper > header .white .phone {
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: bolder;
-}
-
-.layout-wrapper > header .white .phone #phone-underline {
-  color: black;
-}
-
-.layout-wrapper > header .red-navigation {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  background-color: #cd0101;
-  padding: 33px 30px;
   position: relative;
+  width: 100%;
+  height: 60px;
 }
 
-.layout-wrapper > header .red-navigation .menu {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 280px;
-  height: 100vh;
-  background-color: #777;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+.header .white h6 {
+  padding-top: 10px;
 }
 
-.layout-wrapper > header .red-navigation .hamburger-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 28px;
-  height: 30px;
-  opacity: 0;
-  cursor: pointer;
+.header .white h5 {
+  font-size: 1.2rem;
+  font-family: "Pacifico";
 }
 
-.layout-wrapper > header .red-navigation .hamburger-button:checked ~ .menu {
-  -webkit-transform: none;
-          transform: none;
+.header .white #activePhone {
+  color: black;
+  font-weight: bold;
 }
 
-.layout-wrapper > header .red-navigation .hamburger-button:checked ~ .fa-bars:before {
-  content: "\f00d";
+@media only screen and (max-width: 767px) {
+  .header .white p {
+    display: none;
+  }
 }
 
-.layout-wrapper > main {
-  background-color: lightgrey;
-}
-
-.layout-wrapper > main > .free-delivery {
+.header .red {
   background-color: #cd0101;
-  border: 3px solid black;
-  margin: 0 30px;
+  max-height: auto;
+  min-width: 60px;
+  font-size: 1rem;
 }
 
-.layout-wrapper > main > .free-delivery h3,
-.layout-wrapper > main > .free-delivery h4 {
-  text-align: center;
+.header .red #menuId {
   color: white;
-}
-
-.layout-wrapper > main > .free-delivery h3 {
-  -webkit-animation: blinkingH3 2s infinite;
-          animation: blinkingH3 2s infinite;
-}
-
-@-webkit-keyframes blinkingH3 {
-  0% {
-    color: white;
-  }
-  49% {
-    color: white;
-  }
-  60% {
-    color: transparent;
-  }
-  99% {
-    color: transparent;
-  }
-  100% {
-    color: white;
-  }
-}
-
-@keyframes blinkingH3 {
-  0% {
-    color: white;
-  }
-  49% {
-    color: white;
-  }
-  60% {
-    color: transparent;
-  }
-  99% {
-    color: transparent;
-  }
-  100% {
-    color: white;
-  }
-}
-
-.layout-wrapper > main > .mission-statement {
-  background-image: url("../images/ingredientsFaded.PNG");
-  background-color: grey;
-  border: 3px solid black;
-  border-radius: 25px;
-  padding: 5px;
-  margin: 5px 10px 0;
-}
-
-.layout-wrapper > main > .mission-statement h5,
-.layout-wrapper > main > .mission-statement p {
+  text-decoration: none;
+  font-size: 0.75rem;
   text-align: center;
 }
 
-.layout-wrapper > main > .mission-statement p {
-  font-size: 0.75rem;
-}
-
-.food-menu-wrapper {
+.delivery {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-gap: 0.25rem;
-  margin: 5px;
+  -ms-grid-columns: 15% 1fr 15%;
+      grid-template-columns: 15% 1fr 15%;
+  border: 3px solid black;
+  -webkit-box-shadow: 3px 5px black;
+          box-shadow: 3px 5px black;
+  margin-top: 7px;
+  background-color: white;
 }
 
-.food-menu-wrapper > .item {
-  background-color: #008c45;
-  color: white;
+.delivery .icons {
+  width: 40px;
+  padding-top: 10px;
 }
 
-.food-menu-wrapper > .item > .image {
-  height: 200px;
-  background-size: cover;
-  background-position: center center;
-}
-
-.food-menu-wrapper > .item > .name, .food-menu-wrapper > .item .description, .food-menu-wrapper > .item .prices {
-  font-size: .75rem;
-}
-
-.food-menu-wrapper > .item > .description {
-  margin: 5px;
-}
-
-.food-menu-wrapper > .item > .prices {
-  font-size: .60rem;
-}
-
-footer {
+.delivery .center {
   background-color: #cd0101;
+  max-height: 57px;
   color: white;
 }
 
-@media only screen and (min-width: 768px) {
-  .layout-wrapper header .navigation {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+.delivery .center h5,
+.delivery .center h3 {
+  text-align: center;
+}
+
+.delivery .center .blinking {
+  -webkit-animation: blinkingText 2s infinite;
+          animation: blinkingText 2s infinite;
+}
+
+@-webkit-keyframes blinkingText {
+  0% {
+    color: white;
   }
-  .layout-wrapper header .navigation button {
-    display: none;
-    -ms-grid-column-align: center;
-        justify-self: center;
+  49% {
+    color: white;
   }
-  .layout-wrapper header .navigation .menu {
-    list-style-type: none;
+  60% {
+    color: transparent;
   }
-  .layout-wrapper header .navigation .menu > li {
-    margin: 0 1rem;
+  99% {
+    color: transparent;
   }
-  .layout-wrapper header .phone {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
-    -ms-grid-column-align: end;
-        justify-self: end;
-  }
-  .food-menu-wrapper {
-    -ms-grid-columns: ()[3.1fr];
-        grid-template-columns: repeat(3.1fr);
+  100% {
+    color: white;
   }
 }
 
-@media only screen and (min-width: 991px) {
-  .food-menu-wrapper {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+@keyframes blinkingText {
+  0% {
+    color: white;
   }
+  49% {
+    color: white;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.missionStatement {
+  border: 5px solid black;
+  background-image: url("../images/ingredientsfaded.png");
+  background-color: #cd853f;
+  background-size: cover;
+  margin: 10px 15px 0 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 3px 5px black;
+          box-shadow: 3px 5px black;
+}
+
+@media only screen and (max-width: 767px) {
+  .missionStatement {
+    display: none;
+  }
+}
+
+.missionStatement h4 {
+  text-align: center;
+}
+
+.missionStatement p {
+  text-align: center;
+  color: black;
+  font-style: italic;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
