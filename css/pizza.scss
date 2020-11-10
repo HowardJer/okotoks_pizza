@@ -179,10 +179,10 @@ h1 {
   text-align: center;
   > .item {
     background-color: $greenFlag;
-    font-size: .70rem;
+    font-size: 0.7rem;
     color: white;
     .prices {
-      font-size: .60rem;
+      font-size: 0.6rem;
     }
     > .image {
       height: 200px;
@@ -198,23 +198,93 @@ h1 {
   }
 }
 
-    // set up footer
+// set up footer
 
-    footer {
-      border: 3px solid black;
-      background-color: $redLogo;
-      color: white;
-      text-align: center;
-      margin-top: 10px;
-      pre {
-        font-size: 0.75rem;
-        font-weight: bold;
-        font-family: sans-serif;
+footer {
+  border: 3px solid black;
+  background-color: $redLogo;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  pre {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+}
+
+#underlinesFooter {
+  text-decoration: none;
+  color: white;
+}
+
+// adapting for tablet  /////////////////////////////////////
+
+@media only screen and (min-width: 321px) {
+  .grid-container {
+    grid-gap: 50px;
+  }
+  .header {
+    border: 5px solid black;
+    height: 110px;
+
+    .green {
+      .logo {
+        height: 99px;
+      }
+    }
+    .white {
+      h6 {
+        font-size: 1.2rem;
+      }
+      h5 {
+        font-size: 1.4rem;
+      }
+
+      #activePhone {
+        display: none;
+      }
+      @media only screen and (min-width: 767px) {
+        .regPhone {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
       }
     }
 
-    #underlinesFooter {
-      text-decoration: none;
-      color: white;
+    .red {
+      #menuId {
+        font-size: 1.2rem;
+      }
     }
 
+    .freeDelivery {
+      > .delivery {
+        height: 90px;
+        background-color: $redLogo;
+        .center {
+          h3 {
+            font-size: 2.5rem;
+          }
+          h5 {
+            font-size: 2rem;
+          }
+        }
+        .lside,
+        .rside {
+          background-color: white;
+        }
+        .icons {
+          width: 80px;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+}

@@ -199,12 +199,12 @@ h1 {
 
 .menuWrapper > .item {
   background-color: #008c45;
-  font-size: .70rem;
+  font-size: 0.7rem;
   color: white;
 }
 
 .menuWrapper > .item .prices {
-  font-size: .60rem;
+  font-size: 0.6rem;
 }
 
 .menuWrapper > .item > .image {
@@ -236,5 +236,57 @@ footer pre {
 #underlinesFooter {
   text-decoration: none;
   color: white;
+}
+
+@media only screen and (min-width: 321px) {
+  .grid-container {
+    grid-gap: 50px;
+  }
+  .header {
+    border: 5px solid black;
+    height: 110px;
+  }
+  .header .green .logo {
+    height: 99px;
+  }
+  .header .white h6 {
+    font-size: 1.2rem;
+  }
+  .header .white h5 {
+    font-size: 1.4rem;
+  }
+  .header .white #activePhone {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 321px) and (min-width: 767px) {
+  .header .white .regPhone {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 321px) {
+  .header .red #menuId {
+    font-size: 1.2rem;
+  }
+  .header .freeDelivery > .delivery {
+    height: 90px;
+    background-color: #cd0101;
+  }
+  .header .freeDelivery > .delivery .center h3 {
+    font-size: 2.5rem;
+  }
+  .header .freeDelivery > .delivery .center h5 {
+    font-size: 2rem;
+  }
+  .header .freeDelivery > .delivery .lside,
+  .header .freeDelivery > .delivery .rside {
+    background-color: white;
+  }
+  .header .freeDelivery > .delivery .icons {
+    width: 80px;
+  }
 }
 /*# sourceMappingURL=pizza.css.map */
