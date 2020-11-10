@@ -5,178 +5,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" , minimum-scale=1.0, maximum-scale=1">
     <title>Okotoks Pizza</title>
-    <meta name="description" content="Okotoks Pizza & Pasta is one of Okotoks premiere pizzerias. 
-                                       We use only the freshest ingredients when making our pizzas.">
+    <meta name="description" content="Our Menu of the Finest Pizzaa in Okotoks">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="images/okotoks-pizza-logo.png" type="image/x-icon">
 
 </head>
 
 <body>
 
-    <div class="layout-wrapper">
+    <div class="grid-container" id="top">
+
         <header>
-            <div class="green">
-                <img src="images/okotoks-pizza-logo.png" alt="Okotoks Pizza & Pasta">
-            </div>
-            <div class="white">
-                <h1>OKOTOKS PIZZA & PASTA</h1>
-                <p>"Fresh Matters"</p>
-                <br>
-                <div class="phone">
-                    <a id="phone-underline" href="tel:4039388989">(403) 938-8989 </a>
+
+            <div class="header">
+                <div class="green">
+                    <img class="logo" src="images/okotoks-pizza-logo.png" okotoks logo>
                 </div>
+
+                <div class="white">
+                    <h6>OKOTOKS PIZZA & PASTA</h6>
+                    <h5>"Fresh Matters"</h5>
+                    <a id="activePhone" href="tel:555-555-5555" class="mobile-phone">555-555-5555</a>
+                    <p class="regPhone">555-555-5555</p>
+                </div>
+
                 <div class="red">
+                    <nav class="menuBar">
+                        <ul>
+                            <li id="menuId"><a href="#">Home</a></li>
+                            <li id="menuId"><a href="#">About Us</a></li>
+                            <li id="menuId"><a href="#">Location</a></li>
+                            <li id="menuId"><a href="#">Menu</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <div class="red-navigation">
-                <input type="checkbox" class="hamburger-button">
-                <i class="fa fa-bars"></i>
-                <ul class="menu">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Food Menu</a>
-                    </li>
-                    <li>
-                        <a href="#">Location</a>
-                    </li>
-                </ul>
-            </div>
+
         </header>
+
         <main>
-            <div class="free-delivery">
-                <span class="blinking"><h3>Free Delivery</h3></span>
-                <h4>Eat In | Take Out | Fully Licensed</h4>
-            </div>
-            <div class="mission-statement">
-                <h5>Mission Statement</h5>
-                <p>Okotoks Pizza & Pasta' mission is to use only the best ingredients 
-                    and freshest produce in our pizzas and pastas.
-                            </p>
-                            <p>And for our customers to experience the difference quality ingredients
-                                make to our food.
-                            </p>
-            </div>
 
-            <!-- pizza photos and descriptions are from Pizza Hut & the internet-->
-            <div class="daily-special">
-                 <div class="food-menu-wrapper">
-                    <div class="item">
-                        <div class="image" style="background-image:url('images/dailySpecial.png')"></div>
-
-                        <div class="name">
-                            Our Daily Specials
-                        </div>
-                        <div class="description">
-                            <p>We have a great deal for our customers each day of the week.</p> 
-                            <p>Come check it out!</p>
-                        </div>
-                        <div class="prices">
-                           
-                        </div>
+            <div class="freeDelivery">
+                <div class="delivery">
+                    <div class="lside">
+                        <a href="YourFacebookLink.com"><img src="images/facebook.jpg" facebook logo class="icons"></a>
                     </div>
-                    <div class="item">
-                        <div class="image" style="background-image:url('images/pepperonipizza.jpg')"></div>
-                        <div class="name">
-                            SUN - Pepperoni Lovers
-                        </div>
-                        <div class="description">
-                            Double Pepperoni and Extra Mozzarella
-                        </div>
-                        <div class="prices">
-                           Sm $8.99 | Med $10.49 | Lg $11.99
-                        </div>
+                    <div class="center">
+                        <h3><span class="blinking">Free Delivery</span></h3>
+                        <h5>Eat In | Take Out | Fully Licensed</h5>
                     </div>
-                    <div class="item">
-                        <div class="image" style="background-image:url('images/Hawaiian.jpg')"></div>
-                        <div class="name">
-                            MON - Hawaiian
-                        </div>
-                        <div class="description">
-                            Made with Back Bacon and Fresh Pineapple
-                        </div>
-                        <div class="prices">
-                           Sm $8.99 | Med $10.49 | Lg $11.99
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background-image:url('imagesMenu/meatLovers.png')"></div>
-                        <div class="name">
-                            TUE - Meat Lovers
-                        </div>
-                        <div class="description">
-                            Pepperoni, Italian Sausage, Ham & Bacon, & Lots More
-                        </div>
-                        <div class="prices">
-                           Sm $8.99 | Med $10.49 | Lg $11.99
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background-image:url('imagesMenu/lasgna.jpg')"></div>
-                        <div class="name">
-                            WED - Baked Lasagne
-                        </div>
-                        <div class="description">
-                            Made with Great-Nana's recipe passed down thru the generations
-                        </div>
-                        <div class="prices">
-                           1/2 Size $4.99 | Full Size $8.99
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background-image:url('imagesMenu/veggies.png')"></div>
-                        <div class="name">
-                            THU - Vegetarian
-                        </div>
-                        <div class="description">
-                            All the freshest produce, locally sourced
-                        </div>
-                        <div class="prices">
-                            Sm $8.99 | Med $10.49 | Lg $11.99
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background-image:url('imagesMenu/spaghetti.jpg')"></div>
-                        <div class="name">
-                            Fri - Baked Spaghetti
-                        </div>
-                        <div class="description">
-                            Our Nana never lets us down
-                        </div>
-                        <div class="prices">
-                            1/2 Size $4.99 | Full Size $8.99
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background-image:url('imagesMenu/canadian.png')"></div>
-                        <div class="name">
-                            SAT - The Canadian
-                        </div>
-                        <div class="description">
-                            PUH-LENTY of Back Bacon
-                        </div>
-                        <div class="prices">
-                            Sm $8.99 | Med $10.49 | Lg $11.99
-                        </div>
+                    <div class="rside">
+                        <a href="https://publish.twitter.com/"><img src="images/twitter.png" twitter logo
+                                class="icons"></a>
                     </div>
                 </div>
             </div>
 
-            
-            <footer>footer</footer>
+            <div class="missionStatement">
+                <h4>MISSION STATEMENT:</h4>
+
+                <p>Use only the best ingredients when preparing recipes handed down from generation
+                    to generation.
+                </p>
+                <p> Share our passion for the finest deli meats & cheeses & freshest produce with our
+                    friends that come to our pizzeria.
+                </p>
+            </div>
+
+            <div class="specials">
+                <div>
+                    <img class="dailySpecialsign" src="images/dailySpecial1.png" alt="daily special sign">
+                </div>
+                <div class="item">
+                    <div class="day">
+                        <h4>SUN</h4>
+                    </div>
+                    <div class="name1">
+                        Pepperoni
+                    </div>
+                    <div class="price">Sm $6.99 Med $8.49 Lg $9.99
+                    </div>
+                    <div class="image" style="background-image:url('imagesMenu/pepperonipizza.jpg')"
+                        alt="pepperoni pizza">
+                    </div>
+                    <div class="name2">
+                        Fettuccine Alfredo
+                    </div>
+                    <div class="price">1/2 size $3.99 Full $5.99
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="day">
+                        <h4>MON</h4>
+                    </div>
+                    <div class="name1">
+                        Meat Lovers
+                    </div>
+                    <div class="price">Sm $6.99 Med $8.49 Lg $9.99
+                    </div>
+                    <!-- <div class="image" style="background-image:url('imagesMenu/pepperonipizza.jpg')"> -->
+                    <!-- </div> -->
+                    <div class="name2">
+                        Penne with Marinara Sauce
+                    </div>
+                    <div class="price">1/2 size $3.99 Full $5.99
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="day">
+                        <h4>Tue</h4>
+                    </div>
+                    <div class="name1">
+                        Vegetarian
+                    </div>
+                    <div class="price">Sm $6.99 Med $8.49 Lg $9.99
+                    </div>
+                    <div class="image" style="background-image:url('imagesMenu/pizza.jpg')" alt="vegetarian pizza">
+                    </div>
+                    <div class="name2">
+                        Penne with Marinara Sauce
+                    </div>
+                    <div class="price">1/2 size $3.99 Full $5.99
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="day">
+                        <h4>WED</h4>
+                    </div>
+                    <div class="name1">
+                        Hawaiian
+                    </div>
+                    <div class="price">Sm $6.99 Med $8.49 Lg $9.99
+                    </div>
+                    <!-- <div class="image" style="background-image:url('imagesMenu/pizza.jpg')"
+                            alt="vegetarian pizza">
+                        </div> -->
+                    <div class="name2">
+                        Penne with Marinara Sauce
+                    </div>
+                    <div class="price">1/2 size $3.99 Full $5.99
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="day">
+                        <h4>THU</h4>
+                    </div>
+                    <div class="name1">
+                        Chicken Supreme
+                    </div>
+                    <div class="price">Sm $6.99 Med $8.49 Lg $9.99
+                    </div>
+                    <!-- <div class="image" style="background-image:url('imagesMenu/pizza.jpg')"
+                            alt="vegetarian pizza">
+                        </div> -->
+                    <div class="name2">
+                        Baked Ravioli
+                    </div>
+                    <div class="price">1/2 size $3.99 Full $5.99
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="day">
+                        <h4>FRI</h4>
+                    </div>
+                    <div class="name1">
+                        3-Topping
+                    </div>
+                    <div class="price">Sm $6.99 Med $8.49 Lg $9.99
+                    </div>
+                    <!-- <div class="image" style="background-image:url('imagesMenu/pizza.jpg')"
+                            alt="vegetarian pizza">
+                        </div> -->
+                    <div class="name2">
+                        Baked Lasagne
+                    </div>
+                    <div class="image" style="background-image:url('imagesMenu/lasgna.jpg')" alt="vegetarian pizza">
+                    </div>
+                    <div class="price">1/2 size $3.99 Full $5.99
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="day">
+                        <h4>SAT</h4>
+                    </div>
+                    <div class="name1">
+                        Great Canadian
+                    </div>
+                    <div class="price">Sm $6.99 Med $8.49 Lg $9.99
+                    </div>
+                    <!-- <div class="image" style="background-image:url('imagesMenu/pizza.jpg')"
+                            alt="vegetarian pizza">
+                        </div> -->
+                    <div class="name2">
+                        Pasta Pomodoro
+                    </div>
+                    <!-- <div class="image" style="background-image:url('imagesMenu/lasgna.jpg')"
+                            alt="vegetarian pizza">
+                        </div> -->
+                    <div class="price">1/2 size $3.99 Full $5.99
+                    </div>
+                </div>
+            </div>
+
+            <div class="locationGoogle">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2367.635901525178!2d-113.48697258401616!3d53.59995796338519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a023cf06fbbf3f%3A0x3c5a7deb54d0abe9!2sRed%20Swan%20Pizza%20Northgate!5e0!3m2!1sen!2sca!4v1604982312933!5m2!1sen!2sca"
+                    width="700" height="500" frameborder="0" style="border:10px solid lightgrey;" allowfullscreen=""
+                    aria-hidden="false" tabindex="0">
+                </iframe>
+            </div>
 
 
+            <div class="footer">
+                <footer>
+                    <pre>&copy; Copyright 2020 <a id="underlinesFooter" href="https://okotokspizza.tk">    |  OkotoksPizza.tk</a></pre>
+                    <pre><a id="underlinesFooter" href="#top">Back to Top</a></pre>
+                </footer>
 
+            </div>
         </main>
-
-        
 
     </div>
 
+
 </body>
+
+
+
+
+
 
 </html>

@@ -1,224 +1,409 @@
-$color-lightgrey: lightgrey;
-$color-grey: grey;
-$red-logo: rgb(205, 1, 1);
-$green-flag: rgb(0, 140, 69);
+// some variables //////////////////////////////////////////////////////////////
 
+$redLogo: rgb(205, 1, 1);
+$greenFlag: rgb(0, 140, 69);
+$greyL: lightgrey;
+$greyM: darkgrey;
+
+// set up zero points  //////////////////////////////////////////////////////////
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+// set up body & test connection to index.html  ///////////////////////////////////
 
 body {
+  background-color: $greyL;
+  font-family: sans-serif;
+}
+
+// set up the grid container  //////////////////////////////////////////////////////
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 80px repeat(4, 1fr) 40px;
+  grid-gap: 5px;
+  padding: 10px;
+  min-height: 100vh;
+  width: 100%;
+  > div {
+    text-align: center;
     font-family: sans-serif;
+  }
 }
 
-// MOBILE SET UP /////////////////////////////////////////////////////
+// set up for mobile size ////////////////////////////////////////////////////////////
 
-.layout-wrapper {
-    display: grid;
-    grid-template-rows: 90px repeat(4, 1fr) 40px;
-    grid-gap: 10px;
-    min-height: 100vh;
+// set up header  ///////////////////////////////
 
-    > header {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        align-items: center;
-        border: 3px solid black;
-        padding: 0;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  border: 3px solid black;
+  padding-bottom: 0;
+  background-color: white;
 
-        .green {
-            background-color: $green-flag;
-            border-right: 2px solid black;
-            padding: 0;
-            img {
-                max-height: 84px;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
-        .white {
-            background-color: white;
-
-            h1 {
-                font-size: 0.65rem;
-                text-align: center;
-            }
-            p {
-                font-size: 0.9rem;
-                text-align: center;
-                font-family: pacifico;
-            }
-            .phone {
-                text-align: center;
-                font-size: 0.75rem;
-                font-weight: bolder;
-                #phone-underline {
-                    color: black;
-                }
-            }
-        }
-
-        .red-navigation {
-            justify-self: center;
-            background-color: $red-logo;
-            padding: 33px 30px;
-
-            position: relative;
-            .menu {
-                // display: none;
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                width: 280px;
-                height: 100vh;
-                background-color: #777;
-                transform: translateX(-100%);
-                transition: transform 0.2s ease-in-out;
-            }
-
-            .hamburger-button {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 28px;
-                height: 30px;
-                opacity: 0;
-                cursor: pointer;
-
-                &:checked {
-                    ~ .menu {
-                        transform: none;
-                    }
-                    ~ .fa-bars:before {
-                        content: "\f00d";
-                    }
-                }
-            }
-        }
+  .green {
+    .logo {
+      display: block;
+      margin: 0 auto 0 auto;
+      height: 60px;
     }
+    background-color: green;
+    max-height: auto;
+    min-width: 60px;
+    border-right: 2px solid black;
+  }
 
-    > main {
-        background-color: lightgrey;
-
-        > .free-delivery {
-            background-color: $red-logo;
-            border: 3px solid black;
-            margin: 0 30px;
-            h3,
-            h4 {
-                text-align: center;
-                color: white;
-            }
-            h3 {
-                animation: blinkingH3 2s infinite;
-            }
-            @keyframes blinkingH3 {
-                0% {
-                    color: white;
-                }
-                49% {
-                    color: white;
-                }
-                60% {
-                    color: transparent;
-                }
-                99% {
-                    color: transparent;
-                }
-                100% {
-                    color: white;
-                }
-            }
-        }
-
-        > .mission-statement {
-            background-image: url("../images/ingredientsFaded.PNG");
-            background-color: grey;
-            border: 3px solid black;
-            border-radius: 25px;
-
-            padding: 5px;
-            margin: 5px 10px 0;
-            h5,
-            p {
-                text-align: center;
-            }
-            p {
-                font-size: 0.75rem;
-            }
-        }
+  .white {
+    background-color: white;
+    max-height: auto;
+    min-width: 100px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    h6 {
+      padding-top: 10px;
+      // margin-bottom: 0;
+      // padding-bottom: 0;
     }
-    
+    h5 {
+      font-size: 0.75rem;
+      font-family: "Pacifico";
+    }
+    #activePhone {
+      color: black;
+      font-weight: bold;
+    }
+    @media only screen and (max-width: 767px) {
+      .regPhone {
+        display: none;
+      }
+    }
+  }
+
+  .red {
+    background-color: $redLogo;
+    max-height: auto;
+    min-width: 60px;
+    font-size: 1rem;
+    border-left: 2px solid black;
+    #menuId {
+      color: white;
+      text-decoration: none;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
 }
 
-.food-menu-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.25rem;
-    margin: 5px;
+// set up delivery/social media row  /////////////////////////////////
+
+.delivery {
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  border: 3px solid black;
+  box-shadow: 3px 5px black;
+  margin-top: 7px;
+
+  .icons {
+    display: block;
+    width: 40px;
+    padding-top: 8px;
+    margin: 0 auto 0 auto;
+  }
+  background-color: white;
+
+  .center {
+    background-color: rgb(205, 1, 1);
+    max-height: 57px;
+    color: white;
+    h5,
+    h3 {
+      text-align: center;
+    }
+
+    .blinking {
+      animation: blinkingText 2s infinite;
+    }
+    @keyframes blinkingText {
+      0% {
+        color: white;
+      }
+      49% {
+        color: white;
+      }
+      60% {
+        color: transparent;
+      }
+      99% {
+        color: transparent;
+      }
+      100% {
+        color: white;
+      }
+    }
+  }
+}
+
+//  set up for mission statement  //////////////////////////////////////////////////////////
+
+.missionStatement {
+  border: 5px solid black;
+  background-image: url("../images/ingredientsfaded.png");
+  background-color: #cd853f;
+  background-size: cover;
+  margin: 10px 15px 0 10px;
+  border-radius: 15px;
+  box-shadow: 3px 5px black;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    color: black;
+    font-style: italic;
+
+    font-size: 1rem;
+  }
+}
+
+// set up promotions   ///////////////////////////////////////////////////////////////////////
+
+.specials {
+  background-color: $greenFlag;
+  border: 3px solid black;
+  margin-top: 10px;
+
+  .dailySpecialsign {
+    display: inline;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: -5px;
+    border: 4px solid black;
+    box-shadow: 9px 5px black;
+  }
+
+  > .item {
+    background-color: $greenFlag;
+    border-bottom-style: dashed;
+
+    > .image {
+      height: 75px;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .name1,
+    .price,
+    h4,
+    .name2 {
+      text-align: center;
+      color: white;
+      font-size: 0.75rem;
+    }
+
+    .day {
+      margin-top: 10px;
+    }
+
+    .name2 {
+      margin-top: 5px;
+    }
+
+    .price {
+      padding-bottom: 5px;
+    }
+  }
+}
+
+// set up location  //////////////////////////////////////////////////////////////
+
+.locationGoogle {
+  background-color: $greenFlag;
+  border: 3px solid black;
+  margin-top: 10px;
+}
+iframe {
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+// set up footer
+footer {
+  border: 3px solid black;
+  background-color: $redLogo;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  pre {
+    font-size: 0.75rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+}
+
+#underlinesFooter {
+  text-decoration: none;
+  color: white;
+}
+
+// ADAPTING FOR TABLET /////////////////////////////////////////////////////////
+
+@media only screen and (min-width: 321px) {
+  body {
+    background-color: lightgrey;
+    background-image: url("../images/pepperonipizza.jpg");
+    background-size: cover;
+  }
+
+  .grid-container {
+    grid-gap: 50px;
+  }
+
+  .header {
+    border: 5px solid black;
+    height: 110px;
+
+    .green {
+      .logo {
+        height: 99px;
+      }
+    }
+    .white {
+      h6 {
+        font-size: 1.2rem;
+      }
+      h5 {
+        font-size: 1.4rem;
+      }
+
+      #activePhone {
+        display: none;
+      }
+      @media only screen and (min-width: 767px) {
+        .regPhone {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .red {
+      #menuId {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .freeDelivery {
+    > .delivery {
+      height: 90px;
+      background-color: $redLogo;
+      .center {
+        h3 {
+          font-size: 2.5rem;
+        }
+        h5 {
+          font-size: 2rem;
+        }
+      }
+      .lside,
+      .rside {
+        background-color: white;
+      }
+      .icons {
+        width: 80px;
+      }
+    }
+  }
+
+  .missionStatement {
+    margin: 25px 50px 25px 150px;
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .specials {
+    margin: 0 75px;
+    box-shadow: 5px 8px black;
+    .dailySpecialsign {
+      width: 75%;
+      margin-top: -15px;
+      margin-bottom: 10px;
+      margin-left: 30px;
+      box-shadow: 15px 10px black;
+    }
 
     > .item {
-        background-color: $green-flag;
-        color: white;
-        > .image {
-            height: 200px;
-            background-size: cover;
-            background-position: center center;
-        }
+      border-bottom: thick dashed black;
 
-        > .name, .description, .prices {
-            font-size: .75rem;
-        }
-        > .description {
-            margin: 5px;
-        }
-        >.prices {
-            font-size: .60rem;
-        }
+      > .image {
+        height: 150px;
+      }
+
+      .name1,
+      .price,
+      h4,
+      .name2 {
+        font-size: 1.5rem;
+      }
     }
+  }
+
+  .locationGoogle {
+    iframe {
+      display: block;
+      margin: 10px auto 10px auto;
+    }
+  }
+
+  footer {
+    pre {
+      font-size: 1.55rem;
+    }
+  }
 }
 
-footer {
-    background-color: $red-logo;
-    color: white;
-}
+// // ADAPTING FOR DESKTOP /////////////////////////////////////////////////////
 
-@media only screen and (min-width: 768px) {
-    .layout-wrapper header {
-        .navigation {
-            order: 2;
-            button {
-                display: none;
-                justify-self: center;
-            }
-            .menu {
-                // display: block;
-                list-style-type: none;
-                // display: flex;
+@media only screen and (min-width: 992px) {
+  .header {
+    .white {
+      h6 {
+        font-size: 1.5rem;
+      }
+    }
+  }
 
-                > li {
-                    margin: 0 1rem;
-                }
-            }
-        }
-        .phone {
-            order: 3;
-            justify-self: end;
-        }
+  .specials {
+    margin: 0 200px;
+    // box-shadow: 5px 8px black;
+    .dailySpecialsign {
+      width: 60%;
+      margin-top: -15px;
+      margin-bottom: 10px;
+      margin-left: 30px;
+      // box-shadow: 15px 10px black;
     }
 
-    .food-menu-wrapper {
-        grid-template-columns: repeat(3.1fr);
-    }
-}
-@media only screen and (min-width: 991px) {
-    .food-menu-wrapper {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
+    > .item {
+      // border-bottom: thick dashed black;
 
-
+      > .image {
+        height: 200px;
+      }
+    }
+  }
+}
