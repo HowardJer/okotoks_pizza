@@ -249,11 +249,17 @@ body {
   background-color: #008c45;
   border: 3px solid black;
   margin-top: 10px;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
 iframe {
-  display: block;
-  margin: 0 auto 10px auto;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 0 auto 0 auto;
 }
 
 footer {
@@ -360,10 +366,6 @@ footer pre {
   .specials > .item h4,
   .specials > .item .name2 {
     font-size: 1.5rem;
-  }
-  .locationGoogle iframe {
-    display: block;
-    margin: 10px auto 10px auto;
   }
   footer pre {
     font-size: 1.55rem;

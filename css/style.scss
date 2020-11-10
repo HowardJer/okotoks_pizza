@@ -233,10 +233,18 @@ body {
   background-color: $greenFlag;
   border: 3px solid black;
   margin-top: 10px;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 iframe {
-  display: block;
-  margin: 0 auto 10px auto;
+  // left: 30px;
+  // top: 0;
+  height: 100%;
+  width: 100%;  
+  position: absolute;
+  padding: 0 auto 0 auto;
 }
 
 // set up footer
@@ -362,12 +370,12 @@ footer {
     }
   }
 
-  .locationGoogle {
-    iframe {
-      display: block;
-      margin: 10px auto 10px auto;
-    }
-  }
+  // .locationGoogle {
+  //   iframe {
+  //     display: block;
+  //     margin: 10px auto 10px auto;
+  //   }
+  // }
 
   footer {
     pre {
