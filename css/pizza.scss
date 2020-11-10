@@ -197,3 +197,24 @@ h1 {
     }
   }
 }
+
+    // set up footer
+
+    footer {
+      border: 3px solid black;
+      background-color: $redLogo;
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+      pre {
+        font-size: 0.75rem;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+    }
+
+    #underlinesFooter {
+      text-decoration: none;
+      color: white;
+    }
+

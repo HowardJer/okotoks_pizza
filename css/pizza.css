@@ -218,4 +218,23 @@ h1 {
     display: none;
   }
 }
+
+footer {
+  border: 3px solid black;
+  background-color: #cd0101;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+footer pre {
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#underlinesFooter {
+  text-decoration: none;
+  color: white;
+}
 /*# sourceMappingURL=pizza.css.map */
