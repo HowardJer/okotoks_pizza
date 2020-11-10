@@ -7,6 +7,7 @@
 
 body {
   background-color: lightgrey;
+  font-family: sans-serif;
 }
 
 .grid-container {
@@ -16,7 +17,7 @@ body {
       grid-template-columns: auto;
   -ms-grid-rows: 80px (1fr)[4] 40px;
       grid-template-rows: 80px repeat(4, 1fr) 40px;
-  grid-gap: 10px;
+  grid-gap: 5px;
   padding: 10px;
   min-height: 100vh;
   width: 100%;
@@ -187,5 +188,43 @@ body {
   color: black;
   font-style: italic;
   font-size: 1rem;
+}
+
+.specials {
+  background-color: #008c45;
+  border: 3px solid black;
+  margin-top: 10px;
+}
+
+.specials .dailySpecialsign {
+  display: inline;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -5px;
+  border: 4px solid black;
+  -webkit-box-shadow: 9px 5px black;
+          box-shadow: 9px 5px black;
+}
+
+.specials > .item {
+  background-color: #008c45;
+}
+
+.specials > .item > .image {
+  height: 75px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.specials > .item .name1, .specials > .item .price, .specials > .item h4, .specials > .item .name2 {
+  text-align: center;
+  color: white;
+  font-size: .75rem;
+}
+
+.specials > .item .name2 {
+  margin-top: 5px;
 }
 /*# sourceMappingURL=style.css.map */
