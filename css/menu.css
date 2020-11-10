@@ -96,135 +96,74 @@ body {
   text-align: center;
 }
 
-footer {
+.delivery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 1fr 15%;
+      grid-template-columns: 15% 1fr 15%;
   border: 3px solid black;
+  -webkit-box-shadow: 3px 5px black;
+          box-shadow: 3px 5px black;
+  margin-top: 7px;
+  background-color: white;
+}
+
+.delivery .icons {
+  display: block;
+  width: 40px;
+  padding-top: 8px;
+  margin: 0 auto 0 auto;
+}
+
+.delivery .center {
   background-color: #cd0101;
+  max-height: 57px;
   color: white;
+}
+
+.delivery .center h5,
+.delivery .center h3 {
   text-align: center;
-  margin-top: 10px;
 }
 
-footer pre {
-  font-size: 0.75rem;
-  font-weight: bold;
-  font-family: sans-serif;
+.delivery .center .blinking {
+  -webkit-animation: blinkingText 2s infinite;
+          animation: blinkingText 2s infinite;
 }
 
-#underlinesFooter {
-  text-decoration: none;
-  color: white;
-}
-
-@media only screen and (min-width: 321px) {
-  body {
-    background-color: lightgrey;
-    background-image: url("../images/pepperonipizza.jpg");
-    background-size: cover;
+@-webkit-keyframes blinkingText {
+  0% {
+    color: white;
   }
-  .grid-container {
-    grid-gap: 50px;
+  49% {
+    color: white;
   }
-  .header {
-    border: 5px solid black;
-    height: 110px;
+  60% {
+    color: transparent;
   }
-  .header .green .logo {
-    height: 99px;
+  99% {
+    color: transparent;
   }
-  .header .white h6 {
-    font-size: 1.2rem;
-  }
-  .header .white h5 {
-    font-size: 1.4rem;
-  }
-  .header .white #activePhone {
-    display: none;
+  100% {
+    color: white;
   }
 }
 
-@media only screen and (min-width: 321px) and (min-width: 767px) {
-  .header .white .regPhone {
-    font-size: 1.5rem;
-    font-weight: bold;
+@keyframes blinkingText {
+  0% {
+    color: white;
   }
-}
-
-@media only screen and (min-width: 321px) {
-  .header .red #menuId {
-    font-size: 1.2rem;
+  49% {
+    color: white;
   }
-  .freeDelivery > .delivery {
-    height: 90px;
-    background-color: #cd0101;
+  60% {
+    color: transparent;
   }
-  .freeDelivery > .delivery .center h3 {
-    font-size: 2.5rem;
+  99% {
+    color: transparent;
   }
-  .freeDelivery > .delivery .center h5 {
-    font-size: 2rem;
-  }
-  .freeDelivery > .delivery .lside,
-  .freeDelivery > .delivery .rside {
-    background-color: white;
-  }
-  .freeDelivery > .delivery .icons {
-    width: 80px;
-  }
-  .missionStatement {
-    margin: 25px 50px 25px 150px;
-  }
-  .missionStatement p {
-    font-weight: bold;
-  }
-  .specials {
-    margin: 0 75px;
-    -webkit-box-shadow: 5px 8px black;
-            box-shadow: 5px 8px black;
-  }
-  .specials .dailySpecialsign {
-    width: 75%;
-    margin-top: -15px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    -webkit-box-shadow: 15px 10px black;
-            box-shadow: 15px 10px black;
-  }
-  .specials > .item {
-    border-bottom: thick dashed black;
-  }
-  .specials > .item > .image {
-    height: 150px;
-  }
-  .specials > .item .name1,
-  .specials > .item .price,
-  .specials > .item h4,
-  .specials > .item .name2 {
-    font-size: 1.5rem;
-  }
-  .locationGoogle iframe {
-    display: block;
-    margin: 10px auto 10px auto;
-  }
-  footer pre {
-    font-size: 1.55rem;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .header .white h6 {
-    font-size: 1.5rem;
-  }
-  .specials {
-    margin: 0 200px;
-  }
-  .specials .dailySpecialsign {
-    width: 60%;
-    margin-top: -15px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-  }
-  .specials > .item > .image {
-    height: 200px;
+  100% {
+    color: white;
   }
 }
 /*# sourceMappingURL=menu.css.map */
