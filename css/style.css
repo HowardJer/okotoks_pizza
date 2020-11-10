@@ -336,6 +336,11 @@ footer pre {
   .missionStatement p {
     font-weight: bold;
   }
+  .specials {
+    margin: 0 75px;
+    -webkit-box-shadow: 5px 8px black;
+            box-shadow: 5px 8px black;
+  }
   .specials .dailySpecialsign {
     width: 75%;
     margin-top: -15px;
@@ -344,8 +349,24 @@ footer pre {
     -webkit-box-shadow: 15px 10px black;
             box-shadow: 15px 10px black;
   }
-  .specials > .item .image {
+  .specials > .item {
+    border-bottom: thick dashed black;
+  }
+  .specials > .item > .image {
     height: 150px;
+  }
+  .specials > .item .name1,
+  .specials > .item .price,
+  .specials > .item h4,
+  .specials > .item .name2 {
+    font-size: 1.5rem;
+  }
+  .locationGoogle iframe {
+    display: block;
+    margin: 10px auto 10px auto;
+  }
+  footer pre {
+    font-size: 1.55rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
