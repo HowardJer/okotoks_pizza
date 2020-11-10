@@ -149,10 +149,12 @@ body {
   }
 }
 
-.food-menu-wrapper {
+    //  start food 
+.menuWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
+  
 
   > .item {
       background-color: orange;

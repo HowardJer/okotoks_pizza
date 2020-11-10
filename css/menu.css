@@ -167,7 +167,7 @@ body {
   }
 }
 
-.food-menu-wrapper {
+.menuWrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -175,11 +175,11 @@ body {
   grid-gap: 0.25rem;
 }
 
-.food-menu-wrapper > .item {
+.menuWrapper > .item {
   background-color: orange;
 }
 
-.food-menu-wrapper > .item > .image {
+.menuWrapper > .item > .image {
   height: 200px;
   background-size: cover;
   background-position: center center;
