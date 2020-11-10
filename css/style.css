@@ -48,7 +48,7 @@ body {
 .header .green .logo {
   display: block;
   margin: 0 auto 0 auto;
-  max-height: 60px;
+  height: 60px;
 }
 
 .header .white {
@@ -109,8 +109,10 @@ body {
 }
 
 .delivery .icons {
+  display: block;
   width: 40px;
-  padding-top: 10px;
+  padding-top: 8px;
+  margin: 0 auto 0 auto;
 }
 
 .delivery .center {
@@ -281,12 +283,13 @@ footer pre {
   }
   .grid-container {
     grid-gap: 50px;
-    -ms-grid-rows: 120px (1fr)[4] 60px;
-        grid-template-rows: 120px repeat(4, 1fr) 60px;
   }
   .header {
     border: 5px solid black;
     height: 110px;
+  }
+  .header .green .logo {
+    height: 99px;
   }
   .header .white h6 {
     font-size: 1.2rem;
@@ -303,6 +306,46 @@ footer pre {
   .header .white .regPhone {
     font-size: 1.5rem;
     font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 321px) {
+  .header .red #menuId {
+    font-size: 1.2rem;
+  }
+  .freeDelivery > .delivery {
+    height: 90px;
+    background-color: #cd0101;
+  }
+  .freeDelivery > .delivery .center h3 {
+    font-size: 2.5rem;
+  }
+  .freeDelivery > .delivery .center h5 {
+    font-size: 2rem;
+  }
+  .freeDelivery > .delivery .lside,
+  .freeDelivery > .delivery .rside {
+    background-color: white;
+  }
+  .freeDelivery > .delivery .icons {
+    width: 80px;
+  }
+  .missionStatement {
+    margin: 25px 50px 25px 150px;
+  }
+  .missionStatement p {
+    font-weight: bold;
+  }
+  .specials .dailySpecialsign {
+    width: 75%;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    -webkit-box-shadow: 15px 10px black;
+            box-shadow: 15px 10px black;
+  }
+  .specials > .item .image {
+    height: 150px;
   }
 }
 /*# sourceMappingURL=style.css.map */
