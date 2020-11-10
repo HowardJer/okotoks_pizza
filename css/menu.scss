@@ -149,3 +149,18 @@ body {
   }
 }
 
+.food-menu-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.25rem;
+
+  > .item {
+      background-color: orange;
+      > .image {
+          height: 200px;
+          background-size: cover;
+          background-position: center center;
+      }
+  }
+}
+

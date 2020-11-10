@@ -166,4 +166,22 @@ body {
     color: white;
   }
 }
+
+.food-menu-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.25rem;
+}
+
+.food-menu-wrapper > .item {
+  background-color: orange;
+}
+
+.food-menu-wrapper > .item > .image {
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
 /*# sourceMappingURL=menu.css.map */
