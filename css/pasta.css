@@ -5,30 +5,25 @@
           box-sizing: border-box;
 }
 
-body {
+body,
+html {
   background-color: lightgrey;
   font-family: sans-serif;
 }
 
-.grid-container {
+.gridContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 80px (1fr)[4] 40px;
-      grid-template-rows: 80px repeat(4, 1fr) 40px;
+  -ms-grid-rows: 80px 4 1fr 40px;
+      grid-template-rows: 80px 4 1fr 40px;
   grid-gap: 5px;
   padding: 10px;
   min-height: 100vh;
-  width: 100%;
 }
 
-.grid-container > div {
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.header {
+.gridContainer .header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
@@ -38,20 +33,20 @@ body {
   background-color: white;
 }
 
-.header .green {
+.gridContainer .header .green {
   background-color: green;
   max-height: auto;
   min-width: 60px;
   border-right: 2px solid black;
 }
 
-.header .green .logo {
+.gridContainer .header .green .logo {
   display: block;
   margin: 0 auto 0 auto;
   height: 60px;
 }
 
-.header .white {
+.gridContainer .header .white {
   background-color: white;
   max-height: auto;
   min-width: 100px;
@@ -61,42 +56,52 @@ body {
   height: 60px;
 }
 
-.header .white h6 {
+.gridContainer .header .white h6 {
   padding-top: 10px;
 }
 
-.header .white h5 {
+.gridContainer .header .white h5 {
   font-size: 0.75rem;
   font-family: "Pacifico";
 }
 
-.header .white #activePhone {
+.gridContainer .header .white #activePhone {
   color: black;
   font-weight: bold;
 }
 
 @media only screen and (max-width: 767px) {
-  .header .white .regPhone {
+  .gridContainer .header .white .regPhone {
     display: none;
   }
 }
 
-.header .red {
+.gridContainer .header .red {
   background-color: #cd0101;
   max-height: auto;
-  min-width: 60px;
+  width: 100%;
   font-size: 1rem;
   border-left: 2px solid black;
 }
 
-.header .red #menuId {
-  color: white;
-  text-decoration: none;
-  font-size: 0.75rem;
+.gridContainer main .navigation {
+  border: 3px solid black;
+  border-radius: 25px;
   text-align: center;
+  background-color: white;
+  padding: 0 10px;
+  margin: 20px 20px 25px;
 }
 
-.delivery {
+.gridContainer main .navigation li {
+  display: inline;
+}
+
+.gridContainer main .navigation li a {
+  font-size: 0.8rem;
+}
+
+.gridContainer main .freeDelivery .delivery {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 1fr 15%;
@@ -108,25 +113,29 @@ body {
   background-color: white;
 }
 
-.delivery .icons {
+.gridContainer main .freeDelivery .delivery .icons {
   display: block;
   width: 40px;
   padding-top: 8px;
   margin: 0 auto 0 auto;
 }
 
-.delivery .center {
+.gridContainer main .freeDelivery .delivery .center {
   background-color: #cd0101;
-  max-height: 57px;
+  max-height: 100%;
   color: white;
 }
 
-.delivery .center h5,
-.delivery .center h3 {
+.gridContainer main .freeDelivery .delivery .center h5,
+.gridContainer main .freeDelivery .delivery .center h3 {
   text-align: center;
 }
 
-.delivery .center .blinking {
+.gridContainer main .freeDelivery .delivery .center h5 {
+  font-size: 0.75rem;
+}
+
+.gridContainer main .freeDelivery .delivery .center .blinking {
   -webkit-animation: blinkingText 2s infinite;
           animation: blinkingText 2s infinite;
 }
@@ -167,140 +176,101 @@ body {
   }
 }
 
-h1 {
-  font-family: pacifico;
-  font-size: 1.5rem;
-  font-weight: lighter;
-  margin-top: 10px;
-  text-align: center;
-  color: white;
-  background-color: #008c45;
-}
-
-p {
-  font-family: pacifico;
-  font-weight: lighter;
-  text-align: center;
-  background-color: #008c45;
-  color: white;
-}
-
-.menuNav {
-  text-align: center;
-  background-color: #008c45;
-  padding-bottom: 5px;
-}
-
-.menuNav a {
-  color: white;
-}
-
-.menuWrapper {
+.gridContainer main .menuWrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  grid-gap: 0.25rem;
-  margin-top: 7px;
-  text-align: center;
+  grid-gap: 0.5rem;
+  border: 3px solid black;
+  margin: 15px 10px;
 }
 
-.menuWrapper > .item {
-  background-color: #008c45;
-  font-size: 0.7rem;
-  color: white;
+.gridContainer main .menuWrapper > .item {
+  background-color: orange;
 }
 
-.menuWrapper > .item .prices {
-  font-size: 0.6rem;
-}
-
-.menuWrapper > .item > .image {
+.gridContainer main .menuWrapper > .item > .image {
   height: 200px;
   background-size: cover;
   background-position: center center;
 }
 
-@media only screen and (max-width: 991px) {
-  .menuWrapper > .item .description {
-    display: none;
-  }
-}
-
-footer {
+.gridContainer footer > div {
   border: 3px solid black;
   background-color: #cd0101;
   color: white;
   text-align: center;
-  margin-top: 10px;
 }
 
-footer pre {
+.gridContainer footer > div pre {
   font-size: 0.75rem;
   font-weight: bold;
   font-family: sans-serif;
 }
 
-#underlinesFooter {
+.gridContainer footer #underlinesFooter {
   text-decoration: none;
   color: white;
 }
 
-@media only screen and (min-width: 321px) {
-  .grid-container {
-    grid-gap: 50px;
+@media only screen and (min-width: 320px) {
+  body,
+  html {
+    background-image: url(../imagesMenu/plaid.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  .header {
-    border: 5px solid black;
-    height: 110px;
+  body .gridContainer,
+  html .gridContainer {
+    grid-gap: 60px;
   }
-  .header .green .logo {
-    height: 99px;
+  body .gridContainer .header,
+  html .gridContainer .header {
+    height: 120px;
   }
-  .header .white h6 {
-    font-size: 1.2rem;
-  }
-  .header .white h5 {
-    font-size: 1.4rem;
-  }
-  .header .white #activePhone {
+  body .gridContainer .header .white #activePhone,
+  html .gridContainer .header .white #activePhone {
     display: none;
   }
-}
-
-@media only screen and (min-width: 321px) and (min-width: 767px) {
-  .header .white .regPhone {
+  body .gridContainer .header .white h6,
+  html .gridContainer .header .white h6 {
+    font-size: 1.75rem;
+  }
+  body .gridContainer .header .white h5,
+  body .gridContainer .header .white p,
+  html .gridContainer .header .white h5,
+  html .gridContainer .header .white p {
     font-size: 1.5rem;
-    font-weight: bold;
   }
-}
-
-@media only screen and (min-width: 321px) {
-  .header .red #menuId {
-    font-size: 1.2rem;
-  }
-  .header .freeDelivery > .delivery {
-    height: 90px;
-    background-color: #cd0101;
-  }
-  .header .freeDelivery > .delivery .center h3 {
-    font-size: 2.5rem;
-  }
-  .header .freeDelivery > .delivery .center h5 {
+  body .gridContainer main .navigation .menu a,
+  html .gridContainer main .navigation .menu a {
     font-size: 2rem;
   }
-  .header .freeDelivery > .delivery .lside,
-  .header .freeDelivery > .delivery .rside {
-    background-color: white;
+  body .gridContainer main .freeDelivery .delivery,
+  html .gridContainer main .freeDelivery .delivery {
+    border: 5px solid black;
+    height: auto;
   }
-  .header .freeDelivery > .delivery .icons {
+  body .gridContainer main .freeDelivery .delivery .icons,
+  html .gridContainer main .freeDelivery .delivery .icons {
     width: 80px;
+    padding-top: 15px;
   }
-}
-
-@media only screen and (min-width: 992px) {
-  .header .white h6 {
-    font-size: 1.3rem;
+  body .gridContainer main .freeDelivery .delivery .center h3,
+  body .gridContainer main .freeDelivery .delivery .center h5,
+  html .gridContainer main .freeDelivery .delivery .center h3,
+  html .gridContainer main .freeDelivery .delivery .center h5 {
+    font-size: 2rem;
+  }
+  body .gridContainer main .menuWrapper,
+  html .gridContainer main .menuWrapper {
+    margin: 15px 60px;
+  }
+  body .gridContainer footer div pre,
+  html .gridContainer footer div pre {
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=pasta.css.map */
