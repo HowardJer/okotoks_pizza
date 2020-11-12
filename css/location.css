@@ -189,13 +189,13 @@ html {
   display: grid;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-  grid-gap: 5px;
+  grid-gap: 10px;
   padding: 10px;
   min-height: 100vh;
   width: 100%;
   background-color: #008c45;
   border: 3px solid black;
-  margin: 15px 5px;
+  margin: 15px 10px;
   color: white;
 }
 
@@ -205,6 +205,24 @@ html {
   position: relative;
   padding: 0 auto 0 auto;
   margin: 15px 0;
+}
+
+.gridContainer main .addressContainer .leftContainer {
+  background-color: #008c45;
+  min-height: 100vh;
+  width: 100%;
+  border: 3px solid black;
+  margin: 15px 10px;
+  color: white;
+}
+
+.gridContainer main .addressContainer .leftContainer > div {
+  margin: 25px;
+  font-size: 1.5rem;
+}
+
+.gridContainer main .addressContainer .leftContainer h2 {
+  margin-bottom: 15px;
 }
 
 .gridContainer footer > div {
