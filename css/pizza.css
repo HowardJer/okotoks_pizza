@@ -86,17 +86,22 @@ html {
 
 .gridContainer main .navigation {
   border: 3px solid black;
+  border-radius: 25px;
   text-align: center;
   background-color: white;
   padding: 0 10px;
-  margin: 0 120px 25px;
+  margin: 20px 20px 25px;
 }
 
 .gridContainer main .navigation li {
   display: inline;
 }
 
-.gridContainer .freeDelivery .delivery {
+.gridContainer main .navigation li a {
+  font-size: .80rem;
+}
+
+.gridContainer main .freeDelivery .delivery {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 1fr 15%;
@@ -108,29 +113,29 @@ html {
   background-color: white;
 }
 
-.gridContainer .freeDelivery .delivery .icons {
+.gridContainer main .freeDelivery .delivery .icons {
   display: block;
   width: 40px;
   padding-top: 8px;
   margin: 0 auto 0 auto;
 }
 
-.gridContainer .freeDelivery .delivery .center {
+.gridContainer main .freeDelivery .delivery .center {
   background-color: #cd0101;
   max-height: 100%;
   color: white;
 }
 
-.gridContainer .freeDelivery .delivery .center h5,
-.gridContainer .freeDelivery .delivery .center h3 {
+.gridContainer main .freeDelivery .delivery .center h5,
+.gridContainer main .freeDelivery .delivery .center h3 {
   text-align: center;
 }
 
-.gridContainer .freeDelivery .delivery .center h5 {
+.gridContainer main .freeDelivery .delivery .center h5 {
   font-size: 0.75rem;
 }
 
-.gridContainer .freeDelivery .delivery .center .blinking {
+.gridContainer main .freeDelivery .delivery .center .blinking {
   -webkit-animation: blinkingText 2s infinite;
           animation: blinkingText 2s infinite;
 }
@@ -169,5 +174,43 @@ html {
   100% {
     color: white;
   }
+}
+
+.gridContainer main .menuWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+  border: 3px solid black;
+  margin: 15px 10px;
+}
+
+.gridContainer main .menuWrapper > .item {
+  background-color: orange;
+}
+
+.gridContainer main .menuWrapper > .item > .image {
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.gridContainer footer > div {
+  border: 3px solid black;
+  background-color: #cd0101;
+  color: white;
+  text-align: center;
+}
+
+.gridContainer footer > div pre {
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.gridContainer footer #underlinesFooter {
+  text-decoration: none;
+  color: white;
 }
 /*# sourceMappingURL=pizza.css.map */
