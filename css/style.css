@@ -5,30 +5,26 @@
           box-sizing: border-box;
 }
 
-body {
+body,
+html {
   background-color: lightgrey;
   font-family: sans-serif;
 }
 
-.grid-container {
+.gridContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
   -ms-grid-rows: 80px (1fr)[4] 40px;
-      grid-template-rows: 80px repeat(4, 1fr) 40px;
+      grid-template-rows: 80px repeat(4 1fr) 40px;
   grid-gap: 5px;
   padding: 10px;
   min-height: 100vh;
   width: 100%;
 }
 
-.grid-container > div {
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.header {
+.gridContainer .header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
@@ -38,20 +34,20 @@ body {
   background-color: white;
 }
 
-.header .green {
+.gridContainer .header .green {
   background-color: green;
   max-height: auto;
   min-width: 60px;
   border-right: 2px solid black;
 }
 
-.header .green .logo {
+.gridContainer .header .green .logo {
   display: block;
   margin: 0 auto 0 auto;
   height: 60px;
 }
 
-.header .white {
+.gridContainer .header .white {
   background-color: white;
   max-height: auto;
   min-width: 100px;
@@ -61,27 +57,27 @@ body {
   height: 60px;
 }
 
-.header .white h6 {
+.gridContainer .header .white h6 {
   padding-top: 10px;
 }
 
-.header .white h5 {
+.gridContainer .header .white h5 {
   font-size: 0.75rem;
   font-family: "Pacifico";
 }
 
-.header .white #activePhone {
+.gridContainer .header .white #activePhone {
   color: black;
   font-weight: bold;
 }
 
 @media only screen and (max-width: 767px) {
-  .header .white .regPhone {
+  .gridContainer .header .white .regPhone {
     display: none;
   }
 }
 
-.header .red {
+.gridContainer .header .red {
   background-color: #cd0101;
   max-height: auto;
   min-width: 60px;
@@ -89,14 +85,14 @@ body {
   border-left: 2px solid black;
 }
 
-.header .red #menuId {
+.gridContainer .header .red #menuId {
   color: white;
   text-decoration: none;
   font-size: 0.75rem;
   text-align: center;
 }
 
-.delivery {
+.gridContainer main .freeDelivery .delivery {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 1fr 15%;
@@ -108,25 +104,29 @@ body {
   background-color: white;
 }
 
-.delivery .icons {
+.gridContainer main .freeDelivery .delivery .icons {
   display: block;
   width: 40px;
   padding-top: 8px;
   margin: 0 auto 0 auto;
 }
 
-.delivery .center {
+.gridContainer main .freeDelivery .delivery .center {
   background-color: #cd0101;
-  max-height: 57px;
+  max-height: 100%;
   color: white;
 }
 
-.delivery .center h5,
-.delivery .center h3 {
+.gridContainer main .freeDelivery .delivery .center h5,
+.gridContainer main .freeDelivery .delivery .center h3 {
   text-align: center;
 }
 
-.delivery .center .blinking {
+.gridContainer main .freeDelivery .delivery .center h5 {
+  font-size: 0.75rem;
+}
+
+.gridContainer main .freeDelivery .delivery .center .blinking {
   -webkit-animation: blinkingText 2s infinite;
           animation: blinkingText 2s infinite;
 }
@@ -167,7 +167,7 @@ body {
   }
 }
 
-.missionStatement {
+.gridContainer main .missionStatement {
   border: 5px solid black;
   background-image: url("../images/ingredientsfaded.png");
   background-color: #cd853f;
@@ -179,29 +179,29 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-  .missionStatement {
+  .gridContainer main .missionStatement {
     display: none;
   }
 }
 
-.missionStatement h4 {
+.gridContainer main .missionStatement h4 {
   text-align: center;
 }
 
-.missionStatement p {
+.gridContainer main .missionStatement p {
   text-align: center;
   color: black;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
-.specials {
+.gridContainer main .specials {
   background-color: #008c45;
   border: 3px solid black;
   margin-top: 10px;
 }
 
-.specials .dailySpecialsign {
+.gridContainer main .specials .dailySpecialsign {
   display: inline;
   width: 100%;
   height: auto;
@@ -213,39 +213,39 @@ body {
           box-shadow: 9px 5px black;
 }
 
-.specials > .item {
+.gridContainer main .specials > .item {
   background-color: #008c45;
   border-bottom-style: dashed;
 }
 
-.specials > .item > .image {
+.gridContainer main .specials > .item > .image {
   height: 75px;
   background-size: cover;
   background-position: center center;
 }
 
-.specials > .item .name1,
-.specials > .item .price,
-.specials > .item h4,
-.specials > .item .name2 {
+.gridContainer main .specials > .item .name1,
+.gridContainer main .specials > .item .price,
+.gridContainer main .specials > .item h4,
+.gridContainer main .specials > .item .name2 {
   text-align: center;
   color: white;
   font-size: 0.75rem;
 }
 
-.specials > .item .day {
+.gridContainer main .specials > .item .day {
   margin-top: 10px;
 }
 
-.specials > .item .name2 {
+.gridContainer main .specials > .item .name2 {
   margin-top: 5px;
 }
 
-.specials > .item .price {
+.gridContainer main .specials > .item .price {
   padding-bottom: 5px;
 }
 
-.locationGoogle {
+.gridContainer .locationGoogle {
   background-color: #008c45;
   border: 3px solid black;
   margin-top: 10px;
@@ -255,138 +255,107 @@ body {
   height: 0;
 }
 
-iframe {
+.gridContainer iframe {
   height: 100%;
   width: 100%;
   position: absolute;
   padding: 0 auto 0 auto;
 }
 
-footer {
+.gridContainer footer > div {
   border: 3px solid black;
   background-color: #cd0101;
   color: white;
   text-align: center;
-  margin-top: 10px;
 }
 
-footer pre {
+.gridContainer footer > div pre {
   font-size: 0.75rem;
   font-weight: bold;
   font-family: sans-serif;
 }
 
-#underlinesFooter {
+.gridContainer footer #underlinesFooter {
   text-decoration: none;
   color: white;
 }
 
 @media only screen and (min-width: 321px) {
-  body {
-    background-color: lightgrey;
-    background-image: url("../images/pepperonipizza.jpg");
+  body,
+  html {
+    background-image: url(../imagesMenu/pepperonipizza.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
   }
-  .grid-container {
-    grid-gap: 50px;
+  body .gridContainer,
+  html .gridContainer {
+    grid-gap: 25px;
   }
-  .header {
-    border: 5px solid black;
-    height: 110px;
-  }
-  .header .green .logo {
-    height: 99px;
-  }
-  .header .white h6 {
-    font-size: 1.2rem;
-  }
-  .header .white h5 {
-    font-size: 1.4rem;
-  }
-  .header .white #activePhone {
+  body .gridContainer header .white #activePhone,
+  html .gridContainer header .white #activePhone {
     display: none;
   }
-}
-
-@media only screen and (min-width: 321px) and (min-width: 767px) {
-  .header .white .regPhone {
-    font-size: 1.5rem;
-    font-weight: bold;
+  body .gridContainer main .freeDelivery .delivery,
+  html .gridContainer main .freeDelivery .delivery {
+    border: 5px solid black;
+    height: 100px;
   }
-}
-
-@media only screen and (min-width: 321px) {
-  .header .red #menuId {
-    font-size: 1.2rem;
+  body .gridContainer main .freeDelivery .delivery .icons,
+  html .gridContainer main .freeDelivery .delivery .icons {
+    width: 80px;
+    padding-top: 15px;
   }
-  .freeDelivery > .delivery {
-    height: 90px;
-    background-color: #cd0101;
-  }
-  .freeDelivery > .delivery .center h3 {
-    font-size: 2.5rem;
-  }
-  .freeDelivery > .delivery .center h5 {
+  body .gridContainer main .freeDelivery .delivery .center h3,
+  body .gridContainer main .freeDelivery .delivery .center h5,
+  html .gridContainer main .freeDelivery .delivery .center h3,
+  html .gridContainer main .freeDelivery .delivery .center h5 {
     font-size: 2rem;
   }
-  .freeDelivery > .delivery .lside,
-  .freeDelivery > .delivery .rside {
-    background-color: white;
-  }
-  .freeDelivery > .delivery .icons {
-    width: 80px;
-  }
-  .missionStatement {
-    margin: 25px 50px 25px 150px;
-  }
-  .missionStatement p {
-    font-weight: bold;
-  }
-  .specials {
-    margin: 0 75px;
-    -webkit-box-shadow: 5px 8px black;
-            box-shadow: 5px 8px black;
-  }
-  .specials .dailySpecialsign {
-    width: 75%;
-    margin-top: -15px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    -webkit-box-shadow: 15px 10px black;
-            box-shadow: 15px 10px black;
-  }
-  .specials > .item {
-    border-bottom: thick dashed black;
-  }
-  .specials > .item > .image {
-    height: 150px;
-  }
-  .specials > .item .name1,
-  .specials > .item .price,
-  .specials > .item h4,
-  .specials > .item .name2 {
+  body .gridContainer main .missionStatement h4,
+  body .gridContainer main .missionStatement p,
+  html .gridContainer main .missionStatement h4,
+  html .gridContainer main .missionStatement p {
     font-size: 1.5rem;
   }
-  footer pre {
-    font-size: 1.55rem;
+  body .gridContainer main .specials,
+  html .gridContainer main .specials {
+    margin: 25px 60px 0;
+  }
+  body .gridContainer main .specials .dailySpecialsign,
+  html .gridContainer main .specials .dailySpecialsign {
+    width: 70%;
+    height: auto;
+    margin-top: -12px;
+    margin-bottom: 10px;
+    margin-left: -15px;
+    border: 4px solid black;
+    -webkit-box-shadow: 12px 8px black;
+            box-shadow: 12px 8px black;
+  }
+  body .gridContainer main .specials .item .image,
+  html .gridContainer main .specials .item .image {
+    height: 150px;
+  }
+  body .gridContainer main .specials .item h4,
+  body .gridContainer main .specials .item .name1,
+  body .gridContainer main .specials .item .price,
+  body .gridContainer main .specials .item .name2,
+  html .gridContainer main .specials .item h4,
+  html .gridContainer main .specials .item .name1,
+  html .gridContainer main .specials .item .price,
+  html .gridContainer main .specials .item .name2 {
+    font-size: 1rem;
+  }
+  body .gridContainer footer div pre,
+  html .gridContainer footer div pre {
+    font-size: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .header .white h6 {
-    font-size: 1.5rem;
-  }
-  .specials {
-    margin: 0 200px;
-  }
-  .specials .dailySpecialsign {
-    width: 60%;
-    margin-top: -15px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-  }
-  .specials > .item > .image {
-    height: 200px;
+  body .gridContainer main .specials {
+    margin: 50px 400px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
