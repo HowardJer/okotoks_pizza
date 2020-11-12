@@ -87,8 +87,9 @@ html {
 
 .gridContainer main .navigation {
   border: 3px solid black;
+  border-radius: 35px;
   text-align: center;
-  background-color: white;
+  background-color: lightgrey;
   padding: 0 10px;
   margin: 0 120px 25px;
 }

@@ -5,30 +5,26 @@
           box-sizing: border-box;
 }
 
-body {
+body,
+html {
   background-color: lightgrey;
   font-family: sans-serif;
 }
 
-.grid-container {
+.gridContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 80px (1fr)[4] 40px;
-      grid-template-rows: 80px repeat(4, 1fr) 40px;
+  -ms-grid-rows: 80px 40px (1fr)[4] 40px;
+      grid-template-rows: 80px 40px repeat(4 1fr) 40px;
   grid-gap: 5px;
   padding: 10px;
   min-height: 100vh;
   width: 100%;
 }
 
-.grid-container > div {
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.header {
+.gridContainer .header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
@@ -38,20 +34,20 @@ body {
   background-color: white;
 }
 
-.header .green {
+.gridContainer .header .green {
   background-color: green;
   max-height: auto;
   min-width: 60px;
   border-right: 2px solid black;
 }
 
-.header .green .logo {
+.gridContainer .header .green .logo {
   display: block;
   margin: 0 auto 0 auto;
   height: 60px;
 }
 
-.header .white {
+.gridContainer .header .white {
   background-color: white;
   max-height: auto;
   min-width: 100px;
@@ -61,42 +57,47 @@ body {
   height: 60px;
 }
 
-.header .white h6 {
+.gridContainer .header .white h6 {
   padding-top: 10px;
 }
 
-.header .white h5 {
+.gridContainer .header .white h5 {
   font-size: 0.75rem;
   font-family: "Pacifico";
 }
 
-.header .white #activePhone {
+.gridContainer .header .white #activePhone {
   color: black;
   font-weight: bold;
 }
 
 @media only screen and (max-width: 767px) {
-  .header .white .regPhone {
+  .gridContainer .header .white .regPhone {
     display: none;
   }
 }
 
-.header .red {
+.gridContainer .header .red {
   background-color: #cd0101;
   max-height: auto;
-  min-width: 60px;
+  width: 100%;
   font-size: 1rem;
   border-left: 2px solid black;
 }
 
-.header .red #menuId {
-  color: white;
-  text-decoration: none;
-  font-size: 0.75rem;
+.gridContainer main .navigation {
+  border: 3px solid black;
   text-align: center;
+  background-color: white;
+  padding: 0 10px;
+  margin: 0 120px 25px;
 }
 
-.delivery {
+.gridContainer main .navigation li {
+  display: inline;
+}
+
+.gridContainer main .freeDelivery .delivery {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 1fr 15%;
@@ -108,25 +109,29 @@ body {
   background-color: white;
 }
 
-.delivery .icons {
+.gridContainer main .freeDelivery .delivery .icons {
   display: block;
   width: 40px;
   padding-top: 8px;
   margin: 0 auto 0 auto;
 }
 
-.delivery .center {
+.gridContainer main .freeDelivery .delivery .center {
   background-color: #cd0101;
-  max-height: 57px;
+  max-height: 100%;
   color: white;
 }
 
-.delivery .center h5,
-.delivery .center h3 {
+.gridContainer main .freeDelivery .delivery .center h5,
+.gridContainer main .freeDelivery .delivery .center h3 {
   text-align: center;
 }
 
-.delivery .center .blinking {
+.gridContainer main .freeDelivery .delivery .center h5 {
+  font-size: 0.75rem;
+}
+
+.gridContainer main .freeDelivery .delivery .center .blinking {
   -webkit-animation: blinkingText 2s infinite;
           animation: blinkingText 2s infinite;
 }
@@ -167,140 +172,189 @@ body {
   }
 }
 
-h1 {
-  font-family: pacifico;
-  font-size: 1.5rem;
-  font-weight: lighter;
-  margin-top: 10px;
-  text-align: center;
-  color: white;
-  background-color: #008c45;
-}
-
-p {
-  font-family: pacifico;
-  font-weight: lighter;
-  text-align: center;
-  background-color: #008c45;
-  color: white;
-}
-
-.menuNav {
-  text-align: center;
-  background-color: #008c45;
-  padding-bottom: 5px;
-}
-
-.menuNav a {
-  color: white;
-}
-
-.menuWrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-gap: 0.25rem;
-  margin-top: 7px;
-  text-align: center;
-}
-
-.menuWrapper > .item {
-  background-color: #008c45;
-  font-size: 0.7rem;
-  color: white;
-}
-
-.menuWrapper > .item .prices {
-  font-size: 0.6rem;
-}
-
-.menuWrapper > .item > .image {
-  height: 200px;
+.gridContainer main .address {
+  border: 5px solid black;
+  background-image: url("../images/ingredientsfaded.png");
+  background-color: #cd853f;
   background-size: cover;
-  background-position: center center;
+  margin: 10px 15px 0 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 3px 5px black;
+          box-shadow: 3px 5px black;
 }
 
-@media only screen and (max-width: 991px) {
-  .menuWrapper > .item .description {
+@media only screen and (max-width: 767px) {
+  .gridContainer main .address {
     display: none;
   }
 }
 
-footer {
+.gridContainer main .address h4 {
+  text-align: center;
+}
+
+.gridContainer main .address p {
+  text-align: center;
+  color: black;
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.gridContainer main .specials {
+  background-color: #008c45;
+  border: 3px solid black;
+  margin-top: 10px;
+}
+
+.gridContainer main .specials .dailySpecialsign {
+  display: inline;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -5px;
+  border: 4px solid black;
+  -webkit-box-shadow: 9px 5px black;
+          box-shadow: 9px 5px black;
+}
+
+.gridContainer main .specials > .item {
+  background-color: #008c45;
+  border-bottom-style: dashed;
+}
+
+.gridContainer main .specials > .item > .image {
+  height: 75px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.gridContainer main .specials > .item .name1,
+.gridContainer main .specials > .item .price,
+.gridContainer main .specials > .item h4,
+.gridContainer main .specials > .item .name2 {
+  text-align: center;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.gridContainer main .specials > .item .day {
+  margin-top: 10px;
+}
+
+.gridContainer main .specials > .item .name2 {
+  margin-top: 5px;
+}
+
+.gridContainer main .specials > .item .price {
+  padding-bottom: 5px;
+}
+
+.gridContainer .locationGoogle {
+  background-color: #008c45;
+  border: 3px solid black;
+  margin-top: 10px;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.gridContainer iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 0 auto 0 auto;
+}
+
+.gridContainer footer > div {
   border: 3px solid black;
   background-color: #cd0101;
   color: white;
   text-align: center;
-  margin-top: 10px;
 }
 
-footer pre {
+.gridContainer footer > div pre {
   font-size: 0.75rem;
   font-weight: bold;
   font-family: sans-serif;
 }
 
-#underlinesFooter {
+.gridContainer footer #underlinesFooter {
   text-decoration: none;
   color: white;
 }
 
-@media only screen and (min-width: 321px) {
-  .grid-container {
+@media only screen and (min-width: 320px) {
+  body,
+  html {
+    background-image: url(../imagesMenu/pepperonipizza.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  body .gridContainer,
+  html .gridContainer {
     grid-gap: 50px;
   }
-  .header {
-    border: 5px solid black;
-    height: 110px;
-  }
-  .header .green .logo {
-    height: 99px;
-  }
-  .header .white h6 {
-    font-size: 1.2rem;
-  }
-  .header .white h5 {
-    font-size: 1.4rem;
-  }
-  .header .white #activePhone {
+  body .gridContainer header .white #activePhone,
+  html .gridContainer header .white #activePhone {
     display: none;
   }
-}
-
-@media only screen and (min-width: 321px) and (min-width: 767px) {
-  .header .white .regPhone {
-    font-size: 1.5rem;
-    font-weight: bold;
+  body .gridContainer main .freeDelivery .delivery,
+  html .gridContainer main .freeDelivery .delivery {
+    border: 5px solid black;
+    height: 100px;
   }
-}
-
-@media only screen and (min-width: 321px) {
-  .header .red #menuId {
-    font-size: 1.2rem;
+  body .gridContainer main .freeDelivery .delivery .icons,
+  html .gridContainer main .freeDelivery .delivery .icons {
+    width: 80px;
+    padding-top: 15px;
   }
-  .header .freeDelivery > .delivery {
-    height: 90px;
-    background-color: #cd0101;
-  }
-  .header .freeDelivery > .delivery .center h3 {
-    font-size: 2.5rem;
-  }
-  .header .freeDelivery > .delivery .center h5 {
+  body .gridContainer main .freeDelivery .delivery .center h3,
+  body .gridContainer main .freeDelivery .delivery .center h5,
+  html .gridContainer main .freeDelivery .delivery .center h3,
+  html .gridContainer main .freeDelivery .delivery .center h5 {
     font-size: 2rem;
   }
-  .header .freeDelivery > .delivery .lside,
-  .header .freeDelivery > .delivery .rside {
-    background-color: white;
+  body .gridContainer main .address h4,
+  body .gridContainer main .address p,
+  html .gridContainer main .address h4,
+  html .gridContainer main .address p {
+    font-size: 1.5rem;
   }
-  .header .freeDelivery > .delivery .icons {
-    width: 80px;
+  body .gridContainer main .specials,
+  html .gridContainer main .specials {
+    margin: 25px 60px 0;
   }
-}
-
-@media only screen and (min-width: 992px) {
-  .header .white h6 {
-    font-size: 1.3rem;
+  body .gridContainer main .specials .dailySpecialsign,
+  html .gridContainer main .specials .dailySpecialsign {
+    width: 70%;
+    height: auto;
+    margin-top: -12px;
+    margin-bottom: 10px;
+    margin-left: -15px;
+    border: 4px solid black;
+    -webkit-box-shadow: 12px 8px black;
+            box-shadow: 12px 8px black;
+  }
+  body .gridContainer main .specials .item .image,
+  html .gridContainer main .specials .item .image {
+    height: 150px;
+  }
+  body .gridContainer main .specials .item h4,
+  body .gridContainer main .specials .item .name1,
+  body .gridContainer main .specials .item .price,
+  body .gridContainer main .specials .item .name2,
+  html .gridContainer main .specials .item h4,
+  html .gridContainer main .specials .item .name1,
+  html .gridContainer main .specials .item .price,
+  html .gridContainer main .specials .item .name2 {
+    font-size: 1rem;
+  }
+  body .gridContainer footer div pre,
+  html .gridContainer footer div pre {
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=location.css.map */
