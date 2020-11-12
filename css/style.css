@@ -98,6 +98,17 @@ html {
   display: inline;
 }
 
+.gridContainer main .navigation li a {
+  color: #cd0101;
+  text-decoration: none;
+  padding: 0 0 0 10px;
+  line-height: 30pxks;
+}
+
+.gridContainer main .navigation li a:hover {
+  color: #008c45;
+}
+
 .gridContainer main .freeDelivery .delivery {
   display: -ms-grid;
   display: grid;

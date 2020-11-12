@@ -90,8 +90,6 @@ html {
             width: 100%;
             font-size: 1rem;
             border-left: 2px solid black;
-
-         
         }
     }
 
@@ -102,15 +100,10 @@ html {
             border-radius: 35px;
             text-align: center;
             background-color: $greyL;
-           padding: 0 10px;
-           margin: 0 120px 25px;
-            li {
-            display: inline;
-               }
-        }
+            padding: 0 10px;
+            margin: 0 120px 25px;
+           
 
-
-   
         .freeDelivery {
             .delivery {
                 display: grid;
@@ -362,4 +355,3 @@ html {
 }
 
 // DESKTOP  ///////////////////////////////////////////////////////////////////////////@include
-

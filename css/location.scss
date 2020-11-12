@@ -90,33 +90,22 @@ html {
             width: 100%;
             font-size: 1rem;
             border-left: 2px solid black;
-
-         
         }
     }
 
     //  main body /////
     main {
-
         .navigation {
             border: 3px solid black;
             text-align: center;
             background-color: white;
-           padding: 0 10px;
-           margin: 0 120px 25px;
+            padding: 0 10px;
+            margin: 0 120px 25px;
             li {
-            display: inline;
-               }
+                display: inline;
+            }
         }
 
-
-
-
-
-
-
-
-   
         .freeDelivery {
             .delivery {
                 display: grid;
@@ -168,99 +157,70 @@ html {
                 }
             }
         }
-        .address {
-            border: 5px solid black;
-            background-image: url("../images/ingredientsfaded.png");
-            background-color: #cd853f;
-            background-size: cover;
-            margin: 10px 15px 0 10px;
-            border-radius: 15px;
-            box-shadow: 3px 5px black;
-            @media only screen and (max-width: 767px) {
-                display: none;
+        .addressContainer {
+            [class*='side-'] {
+                float: left;
+               
+
+
+            }
+            .side-L {
+                width: 50%
+            }
+            .side-R {
+                width: 50%
             }
 
-            h4 {
-                text-align: center;
-            }
+           
 
-            p {
-                text-align: center;
-                color: black;
-                font-style: italic;
+            // border: 5px solid black;
+            // background-image: url("../images/ingredientsfaded.png");
+            // background-color: #cd853f;
+            // background-size: cover;
+            // margin: 10px 15px 0 10px;
+            // border-radius: 15px;
+            // box-shadow: 3px 5px black;
+           
 
-                font-size: 0.75rem;
-            }
+            // h4 {
+            //     text-align: center;
+            // }
+
+            // p {
+            //     text-align: center;
+            //     color: black;
+            //     font-style: italic;
+
+            //     font-size: 0.75rem;
+            // }
         }
 
-        .specials {
-            background-color: $greenFlag;
+        .rightTop{
+            background-color: white;
             border: 3px solid black;
             margin-top: 10px;
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
 
-            .dailySpecialsign {
-                display: inline;
-                width: 100%;
-                height: auto;
-                margin-top: 10px;
-                margin-bottom: 10px;
-                margin-left: -5px;
-                border: 4px solid black;
-                box-shadow: 9px 5px black;
-            }
+           
 
-            > .item {
-                background-color: $greenFlag;
-                border-bottom-style: dashed;
 
-                > .image {
-                    height: 75px;
-                    background-size: cover;
-                    background-position: center center;
-                }
 
-                .name1,
-                .price,
-                h4,
-                .name2 {
-                    text-align: center;
-                    color: white;
-                    font-size: 0.75rem;
-                }
 
-                .day {
-                    margin-top: 10px;
-                }
-
-                .name2 {
-                    margin-top: 5px;
-                }
-
-                .price {
-                    padding-bottom: 5px;
-                }
-            }
         }
+        iframe {
+            // left: 30px;
+            // top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            padding: 0 auto 0 auto;
+           
+        }
+        
     }
-
-    .locationGoogle {
-        background-color: $greenFlag;
-        border: 3px solid black;
-        margin-top: 10px;
-        overflow: hidden;
-        padding-bottom: 56.25%;
-        position: relative;
-        height: 0;
-    }
-    iframe {
-        // left: 30px;
-        // top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        padding: 0 auto 0 auto;
-    }
-
     footer {
         > div {
             border: 3px solid black;
@@ -282,90 +242,89 @@ html {
     }
 }
 
-//  TABLET  ///////////////////////////////////////////////////////////////////////////
+// //  TABLET  ///////////////////////////////////////////////////////////////////////////
 
-@media only screen and (min-width: 320px) {
-    body,
-    html {
-        background-image: url(../imagesMenu/pepperonipizza.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+// @media only screen and (min-width: 320px) {
+//     body,
+//     html {
+//         background-image: url(../imagesMenu/pepperonipizza.jpg);
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         background-size: cover;
 
-        .gridContainer {
-            grid-gap: 50px;
+//         .gridContainer {
+//             grid-gap: 50px;
 
-            header {
-                .white {
-                    #activePhone {
-                        display: none;
-                    }
-                }
-            }
+//             header {
+//                 .white {
+//                     #activePhone {
+//                         display: none;
+//                     }
+//                 }
+//             }
 
-            main {
-                .freeDelivery {
-                    .delivery {
-                        border: 5px solid black;
-                        height: 100px;
-                        .icons {
-                            width: 80px;
-                            padding-top: 15px;
-                        }
+//             main {
+//                 .freeDelivery {
+//                     .delivery {
+//                         border: 5px solid black;
+//                         height: 100px;
+//                         .icons {
+//                             width: 80px;
+//                             padding-top: 15px;
+//                         }
 
-                        .center {
-                            h3,
-                            h5 {
-                                font-size: 2rem;
-                            }
-                        }
-                    }
-                }
+//                         .center {
+//                             h3,
+//                             h5 {
+//                                 font-size: 2rem;
+//                             }
+//                         }
+//                     }
+//                 }
 
-                .address{
-                    h4,
-                    p {
-                        font-size: 1.5rem;
-                    }
-                }
+//                 .address{
+//                     h4,
+//                     p {
+//                         font-size: 1.5rem;
+//                     }
+//                 }
 
-                .specials {
-                    margin: 25px 60px 0;
-                    .dailySpecialsign {
-                        width: 70%;
-                        height: auto;
-                        margin-top: -12px;
-                        margin-bottom: 10px;
-                        margin-left: -15px;
-                        border: 4px solid black;
-                        box-shadow: 12px 8px black;
-                    }
+//                 .specials {
+//                     margin: 25px 60px 0;
+//                     .dailySpecialsign {
+//                         width: 70%;
+//                         height: auto;
+//                         margin-top: -12px;
+//                         margin-bottom: 10px;
+//                         margin-left: -15px;
+//                         border: 4px solid black;
+//                         box-shadow: 12px 8px black;
+//                     }
 
-                    .item {
-                        .image {
-                            height: 150px;
-                        }
+//                     .item {
+//                         .image {
+//                             height: 150px;
+//                         }
 
-                        h4,
-                        .name1,
-                        .price,
-                        .name2 {
-                            font-size: 1rem;
-                        }
-                    }
-                }
-            }
+//                         h4,
+//                         .name1,
+//                         .price,
+//                         .name2 {
+//                             font-size: 1rem;
+//                         }
+//                     }
+//                 }
+//             }
 
-            footer {
-                div {
-                    pre {
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-        }
-    }
-}
+//             footer {
+//                 div {
+//                     pre {
+//                         font-size: 1.5rem;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-// DESKTOP  ///////////////////////////////////////////////////////////////////////////@include
-
+// // DESKTOP  ///////////////////////////////////////////////////////////////////////////@include
