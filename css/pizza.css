@@ -5,30 +5,25 @@
           box-sizing: border-box;
 }
 
-body {
+body,
+html {
   background-color: lightgrey;
   font-family: sans-serif;
 }
 
-.grid-container {
+.gridContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 80px (1fr)[4] 40px;
-      grid-template-rows: 80px repeat(4, 1fr) 40px;
+  -ms-grid-rows: 80px 4 1fr 40px;
+      grid-template-rows: 80px 4 1fr 40px;
   grid-gap: 5px;
   padding: 10px;
   min-height: 100vh;
-  width: 100%;
 }
 
-.grid-container > div {
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.header {
+.gridContainer .header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
@@ -38,20 +33,20 @@ body {
   background-color: white;
 }
 
-.header .green {
+.gridContainer .header .green {
   background-color: green;
   max-height: auto;
   min-width: 60px;
   border-right: 2px solid black;
 }
 
-.header .green .logo {
+.gridContainer .header .green .logo {
   display: block;
   margin: 0 auto 0 auto;
   height: 60px;
 }
 
-.header .white {
+.gridContainer .header .white {
   background-color: white;
   max-height: auto;
   min-width: 100px;
@@ -61,42 +56,47 @@ body {
   height: 60px;
 }
 
-.header .white h6 {
+.gridContainer .header .white h6 {
   padding-top: 10px;
 }
 
-.header .white h5 {
+.gridContainer .header .white h5 {
   font-size: 0.75rem;
   font-family: "Pacifico";
 }
 
-.header .white #activePhone {
+.gridContainer .header .white #activePhone {
   color: black;
   font-weight: bold;
 }
 
 @media only screen and (max-width: 767px) {
-  .header .white .regPhone {
+  .gridContainer .header .white .regPhone {
     display: none;
   }
 }
 
-.header .red {
+.gridContainer .header .red {
   background-color: #cd0101;
   max-height: auto;
-  min-width: 60px;
+  width: 100%;
   font-size: 1rem;
   border-left: 2px solid black;
 }
 
-.header .red #menuId {
-  color: white;
-  text-decoration: none;
-  font-size: 0.75rem;
+.gridContainer main .navigation {
+  border: 3px solid black;
   text-align: center;
+  background-color: white;
+  padding: 0 10px;
+  margin: 0 120px 25px;
 }
 
-.delivery {
+.gridContainer main .navigation li {
+  display: inline;
+}
+
+.gridContainer .freeDelivery .delivery {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 1fr 15%;
@@ -108,25 +108,29 @@ body {
   background-color: white;
 }
 
-.delivery .icons {
+.gridContainer .freeDelivery .delivery .icons {
   display: block;
   width: 40px;
   padding-top: 8px;
   margin: 0 auto 0 auto;
 }
 
-.delivery .center {
+.gridContainer .freeDelivery .delivery .center {
   background-color: #cd0101;
-  max-height: 57px;
+  max-height: 100%;
   color: white;
 }
 
-.delivery .center h5,
-.delivery .center h3 {
+.gridContainer .freeDelivery .delivery .center h5,
+.gridContainer .freeDelivery .delivery .center h3 {
   text-align: center;
 }
 
-.delivery .center .blinking {
+.gridContainer .freeDelivery .delivery .center h5 {
+  font-size: 0.75rem;
+}
+
+.gridContainer .freeDelivery .delivery .center .blinking {
   -webkit-animation: blinkingText 2s infinite;
           animation: blinkingText 2s infinite;
 }
@@ -164,135 +168,6 @@ body {
   }
   100% {
     color: white;
-  }
-}
-
-h1 {
-  font-family: pacifico;
-  font-size: 1.5rem;
-  font-weight: lighter;
-  margin-top: 10px;
-  text-align: center;
-  color: white;
-  background-color: #008c45;
-}
-
-.menuNav {
-  text-align: center;
-  background-color: #008c45;
-  padding-bottom: 5px;
-}
-
-.menuNav a {
-  color: white;
-}
-
-.menuWrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-gap: 0.25rem;
-  margin-top: 7px;
-  text-align: center;
-}
-
-.menuWrapper > .item {
-  background-color: #008c45;
-  font-size: 0.7rem;
-  color: white;
-}
-
-.menuWrapper > .item .prices {
-  font-size: 0.6rem;
-}
-
-.menuWrapper > .item > .image {
-  height: 200px;
-  background-size: cover;
-  background-position: center center;
-}
-
-@media only screen and (max-width: 991px) {
-  .menuWrapper > .item .description {
-    display: none;
-  }
-}
-
-footer {
-  border: 3px solid black;
-  background-color: #cd0101;
-  color: white;
-  text-align: center;
-  margin-top: 10px;
-}
-
-footer pre {
-  font-size: 0.75rem;
-  font-weight: bold;
-  font-family: sans-serif;
-}
-
-#underlinesFooter {
-  text-decoration: none;
-  color: white;
-}
-
-@media only screen and (min-width: 321px) {
-  .grid-container {
-    grid-gap: 50px;
-  }
-  .header {
-    border: 5px solid black;
-    height: 110px;
-  }
-  .header .green .logo {
-    height: 99px;
-  }
-  .header .white h6 {
-    font-size: 1.2rem;
-  }
-  .header .white h5 {
-    font-size: 1.4rem;
-  }
-  .header .white #activePhone {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 321px) and (min-width: 767px) {
-  .header .white .regPhone {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-}
-
-@media only screen and (min-width: 321px) {
-  .header .red #menuId {
-    font-size: 1.2rem;
-  }
-  .header .freeDelivery > .delivery {
-    height: 90px;
-    background-color: #cd0101;
-  }
-  .header .freeDelivery > .delivery .center h3 {
-    font-size: 2.5rem;
-  }
-  .header .freeDelivery > .delivery .center h5 {
-    font-size: 2rem;
-  }
-  .header .freeDelivery > .delivery .lside,
-  .header .freeDelivery > .delivery .rside {
-    background-color: white;
-  }
-  .header .freeDelivery > .delivery .icons {
-    width: 80px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .header .white h6 {
-    font-size: 1.3rem;
   }
 }
 /*# sourceMappingURL=pizza.css.map */
