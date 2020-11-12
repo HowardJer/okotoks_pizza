@@ -172,7 +172,7 @@ html {
   }
 }
 
-.gridContainer main .addressContainer [class*='side-'] {
+.gridContainer main .addressContainer [class*="side-"] {
   float: left;
 }
 
@@ -184,21 +184,27 @@ html {
   width: 50%;
 }
 
-.gridContainer main .rightTop {
-  background-color: white;
+.gridContainer main .addressContainer .rightContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 5px;
+  padding: 10px;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #008c45;
   border: 3px solid black;
-  margin-top: 10px;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
+  margin: 15px 5px;
+  color: white;
 }
 
-.gridContainer main iframe {
-  height: 100%;
+.gridContainer main .addressContainer .rightContainer .top iframe {
+  height: 75%;
   width: 100%;
-  position: absolute;
+  position: relative;
   padding: 0 auto 0 auto;
+  margin: 15px 0;
 }
 
 .gridContainer footer > div {
