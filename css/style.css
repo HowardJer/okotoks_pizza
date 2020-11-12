@@ -16,8 +16,8 @@ html {
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 80px (1fr)[4] 40px;
-      grid-template-rows: 80px repeat(4 1fr) 40px;
+  -ms-grid-rows: 80px 40px (1fr)[4] 40px;
+      grid-template-rows: 80px 40px repeat(4 1fr) 40px;
   grid-gap: 5px;
   padding: 10px;
   min-height: 100vh;
@@ -80,16 +80,21 @@ html {
 .gridContainer .header .red {
   background-color: #cd0101;
   max-height: auto;
-  min-width: 60px;
+  width: 100%;
   font-size: 1rem;
   border-left: 2px solid black;
 }
 
-.gridContainer .header .red #menuId {
-  color: white;
-  text-decoration: none;
-  font-size: 0.75rem;
+.gridContainer main .navigation {
+  border: 3px solid black;
   text-align: center;
+  background-color: white;
+  padding: 0 10px;
+  margin: 0 120px 25px;
+}
+
+.gridContainer main .navigation li {
+  display: inline;
 }
 
 .gridContainer main .freeDelivery .delivery {
@@ -280,7 +285,7 @@ html {
   color: white;
 }
 
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 320px) {
   body,
   html {
     background-image: url(../imagesMenu/pepperonipizza.jpg);
@@ -290,7 +295,7 @@ html {
   }
   body .gridContainer,
   html .gridContainer {
-    grid-gap: 25px;
+    grid-gap: 50px;
   }
   body .gridContainer header .white #activePhone,
   html .gridContainer header .white #activePhone {
@@ -350,12 +355,6 @@ html {
   body .gridContainer footer div pre,
   html .gridContainer footer div pre {
     font-size: 1.5rem;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  body .gridContainer main .specials {
-    margin: 50px 400px 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

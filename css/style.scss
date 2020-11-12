@@ -30,7 +30,7 @@ html {
 .gridContainer {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 80px repeat(4 1fr) 40px;
+    grid-template-rows: 80px 40px repeat(4 1fr) 40px;
     grid-gap: 5px;
     padding: 10px;
     min-height: 100vh;
@@ -87,20 +87,36 @@ html {
         .red {
             background-color: $redLogo;
             max-height: auto;
-            min-width: 60px;
+            width: 100%;
             font-size: 1rem;
             border-left: 2px solid black;
-            #menuId {
-                color: white;
-                text-decoration: none;
-                font-size: 0.75rem;
-                text-align: center;
-            }
+
+         
         }
     }
 
     //  main body /////
     main {
+
+        .navigation {
+            border: 3px solid black;
+            text-align: center;
+            background-color: white;
+           padding: 0 10px;
+           margin: 0 120px 25px;
+            li {
+            display: inline;
+               }
+        }
+
+
+
+
+
+
+
+
+   
         .freeDelivery {
             .delivery {
                 display: grid;
@@ -268,7 +284,7 @@ html {
 
 //  TABLET  ///////////////////////////////////////////////////////////////////////////
 
-@media only screen and (min-width: 321px) {
+@media only screen and (min-width: 320px) {
     body,
     html {
         background-image: url(../imagesMenu/pepperonipizza.jpg);
@@ -277,7 +293,7 @@ html {
         background-size: cover;
 
         .gridContainer {
-            grid-gap: 25px;
+            grid-gap: 50px;
 
             header {
                 .white {
@@ -351,27 +367,5 @@ html {
     }
 }
 
-//  DESKTOP  ///////////////////////////////////////////////////////////////////////////
+// DESKTOP  ///////////////////////////////////////////////////////////////////////////@include
 
-@media only screen and (min-width: 992px) {
-
-body {
-
-    .gridContainer {
-      main {
-            .specials {
-                margin: 50px 400px 0;
-        }
-    }
-}
-}
-
-
-
-
-
-
-
-
-
-}
