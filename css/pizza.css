@@ -98,7 +98,7 @@ html {
 }
 
 .gridContainer main .navigation li a {
-  font-size: .80rem;
+  font-size: 0.8rem;
 }
 
 .gridContainer main .freeDelivery .delivery {
@@ -212,5 +212,65 @@ html {
 .gridContainer footer #underlinesFooter {
   text-decoration: none;
   color: white;
+}
+
+@media only screen and (min-width: 320px) {
+  body,
+  html {
+    background-image: url(../imagesMenu/plaid.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  body .gridContainer,
+  html .gridContainer {
+    grid-gap: 60px;
+  }
+  body .gridContainer .header,
+  html .gridContainer .header {
+    height: 120px;
+  }
+  body .gridContainer .header .white #activePhone,
+  html .gridContainer .header .white #activePhone {
+    display: none;
+  }
+  body .gridContainer .header .white h6,
+  html .gridContainer .header .white h6 {
+    font-size: 1.75rem;
+  }
+  body .gridContainer .header .white h5,
+  body .gridContainer .header .white p,
+  html .gridContainer .header .white h5,
+  html .gridContainer .header .white p {
+    font-size: 1.5rem;
+  }
+  body .gridContainer main .navigation .menu a,
+  html .gridContainer main .navigation .menu a {
+    font-size: 2rem;
+  }
+  body .gridContainer main .freeDelivery .delivery,
+  html .gridContainer main .freeDelivery .delivery {
+    border: 5px solid black;
+    height: auto;
+  }
+  body .gridContainer main .freeDelivery .delivery .icons,
+  html .gridContainer main .freeDelivery .delivery .icons {
+    width: 80px;
+    padding-top: 15px;
+  }
+  body .gridContainer main .freeDelivery .delivery .center h3,
+  body .gridContainer main .freeDelivery .delivery .center h5,
+  html .gridContainer main .freeDelivery .delivery .center h3,
+  html .gridContainer main .freeDelivery .delivery .center h5 {
+    font-size: 2rem;
+  }
+  body .gridContainer main .menuWrapper,
+  html .gridContainer main .menuWrapper {
+    margin: 15px 60px;
+  }
+  body .gridContainer footer div pre,
+  html .gridContainer footer div pre {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=pizza.css.map */
