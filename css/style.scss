@@ -30,7 +30,7 @@ html {
 .gridContainer {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 80px 40px repeat(4 1fr) 40px;
+    grid-template-rows: 80px 40px 1fr 1fr 1fr 1fr 40px;
     grid-gap: 5px;
     padding: 10px;
     min-height: 100vh;
@@ -50,7 +50,7 @@ html {
                 margin: 0 auto 0 auto;
                 height: 60px;
             }
-            background-color: green;
+            background-color: $greenFlag;
             max-height: auto;
             min-width: 60px;
             border-right: 2px solid black;
@@ -102,23 +102,23 @@ html {
             background-color: $greyL;
             padding: 0 10px;
             margin: 0 120px 25px;
-           
 
-        .freeDelivery {
-            .delivery {
-                display: grid;
-                grid-template-columns: 15% 1fr 15%;
-                border: 3px solid black;
-                box-shadow: 3px 5px black;
-                margin-top: 7px;
+            .freeDelivery {
+                .delivery {
+                    display: grid;
+                    grid-template-columns: 15% 1fr 15%;
+                    border: 3px solid black;
+                    box-shadow: 3px 5px black;
+                    margin-top: 7px;
+                    background-color: grey;
 
-                .icons {
-                    display: block;
-                    width: 40px;
-                    padding-top: 8px;
-                    margin: 0 auto 0 auto;
+                    .icons {
+                        display: block;
+                        width: 40px;
+                        padding-top: 8px;
+                        margin: 0 auto 0 auto;
+                    }
                 }
-                background-color: white;
 
                 .center {
                     background-color: rgb(205, 1, 1);
@@ -228,130 +228,129 @@ html {
                 }
             }
         }
-    }
 
-    .locationGoogle {
-        background-color: $greenFlag;
-        border: 3px solid black;
-        margin-top: 10px;
-        overflow: hidden;
-        padding-bottom: 56.25%;
-        position: relative;
-        height: 0;
-    }
-    iframe {
-        // left: 30px;
-        // top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        padding: 0 auto 0 auto;
-    }
-
-    footer {
-        > div {
+        .locationGoogle {
+            background-color: $greenFlag;
             border: 3px solid black;
-            background-color: $redLogo;
-            color: white;
-            text-align: center;
-
-            pre {
-                font-size: 0.75rem;
-                font-weight: bold;
-                font-family: sans-serif;
-            }
+            margin-top: 10px;
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
         }
-
-        #underlinesFooter {
-            text-decoration: none;
-            color: white;
+        iframe {
+            // left: 30px;
+            // top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            padding: 0 auto 0 auto;
         }
     }
+    // footer {
+    //     > div {
+    //         border: 3px solid black;
+    //         background-color: $redLogo;
+    //         color: white;
+    //         text-align: center;
+
+    //         pre {
+    //             font-size: 0.75rem;
+    //             font-weight: bold;
+    //             font-family: sans-serif;
+    //         }
+    //     }
+
+    //     #underlinesFooter {
+    //         text-decoration: none;
+    //         color: white;
+    //     }
+    // }
 }
 
 //  TABLET  ///////////////////////////////////////////////////////////////////////////
 
-@media only screen and (min-width: 320px) {
-    body,
-    html {
-        background-image: url(../imagesMenu/pepperonipizza.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+// @media only screen and (min-width: 320px) {
+//     body,
+//     html {
+//         background-image: url(../imagesMenu/pepperonipizza.jpg);
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         background-size: cover;
 
-        .gridContainer {
-            grid-gap: 50px;
+//         .gridContainer {
+//             grid-gap: 50px;
 
-            header {
-                .white {
-                    #activePhone {
-                        display: none;
-                    }
-                }
-            }
+//             header {
+//                 .white {
+//                     #activePhone {
+//                         display: none;
+//                     }
+//                 }
+//             }
 
-            main {
-                .freeDelivery {
-                    .delivery {
-                        border: 5px solid black;
-                        height: 100px;
-                        .icons {
-                            width: 80px;
-                            padding-top: 15px;
-                        }
+//             main {
+//                 .freeDelivery {
+//                     .delivery {
+//                         border: 5px solid black;
+//                         height: 100px;
+//                         .icons {
+//                             width: 80px;
+//                             padding-top: 15px;
+//                         }
 
-                        .center {
-                            h3,
-                            h5 {
-                                font-size: 2rem;
-                            }
-                        }
-                    }
-                }
+//                         .center {
+//                             h3,
+//                             h5 {
+//                                 font-size: 2rem;
+//                             }
+//                         }
+//                     }
+//                 }
 
-                .missionStatement {
-                    h4,
-                    p {
-                        font-size: 1.5rem;
-                    }
-                }
+//                 .missionStatement {
+//                     h4,
+//                     p {
+//                         font-size: 1.5rem;
+//                     }
+//                 }
 
-                .specials {
-                    margin: 25px 60px 0;
-                    .dailySpecialsign {
-                        width: 70%;
-                        height: auto;
-                        margin-top: -12px;
-                        margin-bottom: 10px;
-                        margin-left: -15px;
-                        border: 4px solid black;
-                        box-shadow: 12px 8px black;
-                    }
+//                 .specials {
+//                     margin: 25px 60px 0;
+//                     .dailySpecialsign {
+//                         width: 70%;
+//                         height: auto;
+//                         margin-top: -12px;
+//                         margin-bottom: 10px;
+//                         margin-left: -15px;
+//                         border: 4px solid black;
+//                         box-shadow: 12px 8px black;
+//                     }
 
-                    .item {
-                        .image {
-                            height: 150px;
-                        }
+//                     .item {
+//                         .image {
+//                             height: 150px;
+//                         }
 
-                        h4,
-                        .name1,
-                        .price,
-                        .name2 {
-                            font-size: 1rem;
-                        }
-                    }
-                }
-            }
+//                         h4,
+//                         .name1,
+//                         .price,
+//                         .name2 {
+//                             font-size: 1rem;
+//                         }
+//                     }
+//                 }
+//             }
 
-            footer {
-                div {
-                    pre {
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-        }
-    }
-}
+//             footer {
+//                 div {
+//                     pre {
+//                         font-size: 1.5rem;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 // DESKTOP  ///////////////////////////////////////////////////////////////////////////@include

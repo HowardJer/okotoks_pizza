@@ -35,7 +35,7 @@ html {
 }
 
 .gridContainer .header .green {
-  background-color: #008c45;
+  background-color: grey;
   max-height: auto;
   min-width: 60px;
   border-right: 2px solid black;
@@ -87,14 +87,17 @@ html {
 
 .gridContainer main .navigation {
   border: 3px solid black;
-  border-radius: 35px;
   text-align: center;
-  background-color: lightgrey;
+  background-color: white;
   padding: 0 10px;
   margin: 0 120px 25px;
 }
 
-.gridContainer main .navigation .freeDelivery .delivery {
+.gridContainer main .navigation li {
+  display: inline;
+}
+
+.gridContainer main .freeDelivery .delivery {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 1fr 15%;
@@ -103,32 +106,32 @@ html {
   -webkit-box-shadow: 3px 5px black;
           box-shadow: 3px 5px black;
   margin-top: 7px;
-  background-color: grey;
+  background-color: white;
 }
 
-.gridContainer main .navigation .freeDelivery .delivery .icons {
+.gridContainer main .freeDelivery .delivery .icons {
   display: block;
   width: 40px;
   padding-top: 8px;
   margin: 0 auto 0 auto;
 }
 
-.gridContainer main .navigation .freeDelivery .center {
+.gridContainer main .freeDelivery .delivery .center {
   background-color: #cd0101;
   max-height: 100%;
   color: white;
 }
 
-.gridContainer main .navigation .freeDelivery .center h5,
-.gridContainer main .navigation .freeDelivery .center h3 {
+.gridContainer main .freeDelivery .delivery .center h5,
+.gridContainer main .freeDelivery .delivery .center h3 {
   text-align: center;
 }
 
-.gridContainer main .navigation .freeDelivery .center h5 {
+.gridContainer main .freeDelivery .delivery .center h5 {
   font-size: 0.75rem;
 }
 
-.gridContainer main .navigation .freeDelivery .center .blinking {
+.gridContainer main .freeDelivery .delivery .center .blinking {
   -webkit-animation: blinkingText 2s infinite;
           animation: blinkingText 2s infinite;
 }
@@ -169,98 +172,49 @@ html {
   }
 }
 
-.gridContainer main .missionStatement {
-  border: 5px solid black;
-  background-image: url("../images/ingredientsfaded.png");
-  background-color: #cd853f;
-  background-size: cover;
-  margin: 10px 15px 0 10px;
-  border-radius: 15px;
-  -webkit-box-shadow: 3px 5px black;
-          box-shadow: 3px 5px black;
+.gridContainer main .addressContainer [class*="side-"] {
+  float: left;
 }
 
-@media only screen and (max-width: 767px) {
-  .gridContainer main .missionStatement {
-    display: none;
-  }
+.gridContainer main .addressContainer .side-L {
+  width: 50%;
 }
 
-.gridContainer main .missionStatement h4 {
-  text-align: center;
+.gridContainer main .addressContainer .side-L .leftContainer {
+  background-color: grey;
+  min-height: 100vh;
+  width: 100%;
+  border: 3px solid black;
+  margin-top: 50px;
 }
 
-.gridContainer main .missionStatement p {
-  text-align: center;
+.gridContainer main .addressContainer .side-L .leftContainer h1 {
+  font-size: 5rem;
+}
+
+.gridContainer main .addressContainer .side-R {
+  width: 50%;
+}
+
+.gridContainer main .addressContainer .side-R .rightContainer .top {
   color: black;
-  font-style: italic;
-  font-size: 0.75rem;
 }
 
-.gridContainer main .specials {
-  background-color: #008c45;
+.gridContainer footer > div {
   border: 3px solid black;
-  margin-top: 10px;
-}
-
-.gridContainer main .specials .dailySpecialsign {
-  display: inline;
-  width: 100%;
-  height: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: -5px;
-  border: 4px solid black;
-  -webkit-box-shadow: 9px 5px black;
-          box-shadow: 9px 5px black;
-}
-
-.gridContainer main .specials > .item {
-  background-color: #008c45;
-  border-bottom-style: dashed;
-}
-
-.gridContainer main .specials > .item > .image {
-  height: 75px;
-  background-size: cover;
-  background-position: center center;
-}
-
-.gridContainer main .specials > .item .name1,
-.gridContainer main .specials > .item .price,
-.gridContainer main .specials > .item h4,
-.gridContainer main .specials > .item .name2 {
-  text-align: center;
+  background-color: #cd0101;
   color: white;
+  text-align: center;
+}
+
+.gridContainer footer > div pre {
   font-size: 0.75rem;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 
-.gridContainer main .specials > .item .day {
-  margin-top: 10px;
+.gridContainer footer #underlinesFooter {
+  text-decoration: none;
+  color: white;
 }
-
-.gridContainer main .specials > .item .name2 {
-  margin-top: 5px;
-}
-
-.gridContainer main .specials > .item .price {
-  padding-bottom: 5px;
-}
-
-.gridContainer main .locationGoogle {
-  background-color: #008c45;
-  border: 3px solid black;
-  margin-top: 10px;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-}
-
-.gridContainer main iframe {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  padding: 0 auto 0 auto;
-}
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=aboutUs.css.map */
