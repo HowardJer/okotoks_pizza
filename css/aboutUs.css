@@ -172,32 +172,40 @@ html {
   }
 }
 
-.gridContainer main .addressContainer [class*="side-"] {
-  float: left;
+.gridContainer main .grid {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  top: 0;
+  left: 0;
+  -ms-grid-columns: 50vw 50vw;
+      grid-template-columns: 50vw 50vw;
+  -ms-grid-rows: 50vh 50vh;
+      grid-template-rows: 50vh 50vh;
+      grid-template-areas: 'left right-up' 'left right-down';
 }
 
-.gridContainer main .addressContainer .side-L {
-  width: 50%;
+.gridContainer main .left {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: left;
+  background-color: blue;
+  color: white;
 }
 
-.gridContainer main .addressContainer .side-L .leftContainer {
-  background-color: grey;
-  min-height: 100vh;
-  width: 100%;
-  border: 3px solid black;
-  margin-top: 50px;
+.gridContainer main .right-up {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right-up;
+  background-color: green;
 }
 
-.gridContainer main .addressContainer .side-L .leftContainer h1 {
-  font-size: 5rem;
-}
-
-.gridContainer main .addressContainer .side-R {
-  width: 50%;
-}
-
-.gridContainer main .addressContainer .side-R .rightContainer .top {
-  color: black;
+.gridContainer main .right-down {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: right-down;
+  background-color: red;
 }
 
 .gridContainer footer > div {

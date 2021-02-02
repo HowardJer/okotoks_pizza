@@ -30,7 +30,7 @@ html {
 .gridContainer {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 80px 40px 1fr 1fr 1fr 1fr 40px;
+    grid-template-rows: 80px 40px repeat(4 1fr) 40px;
     grid-gap: 5px;
     padding: 10px;
     min-height: 100vh;
@@ -50,7 +50,7 @@ html {
                 margin: 0 auto 0 auto;
                 height: 60px;
             }
-            background-color: grey;
+            background-color: green;
             max-height: auto;
             min-width: 60px;
             border-right: 2px solid black;
@@ -160,59 +160,67 @@ html {
         .addressContainer {
             [class*="side-"] {
                 float: left;
-               }
-
+            }
             .side-L {
                 width: 50%;
-              
-                .leftContainer {
-                    background-color: grey;
-                    min-height: 100vh;
-                    width: 100%;
-                    border: 3px solid black;
-                    margin-top: 50px;
-                    h1 {
-                        font-size: 5rem;
-                     }
-                }  
-
-
-
-
             }
-            // .leftContainer {
-            //     background-color: green;
-            //     min-height: 100vh;
-            //     width: 100%;
-            //     border: 3px solid black;
-            //     margin-top: 50px;
-            //     h1 {
-            //         font-size: 5rem;
-            //      }
-            // }
-                
-            
-            
-            
             .side-R {
                 width: 50%;
-                .rightContainer {
-                    .top {
-                        color: black;
+            }
+            .rightContainer {
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-gap: 10px;
+                padding: 10px;
+                min-height: 100vh;
+                width: 100%;
+                background-color: $greenFlag;
+                border: 3px solid black;
+                margin-top: 50px;
+                color: white;
+                .top {
+                    .maps {
+                        position: relative;
+                        padding-bottom: 75%;
+                        height: 0;
+                        overflow: hidden;
+                        margin-top: 50px;
+                        iframe {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
                 }
-             
-                    
-               
-                    
-             
 
+                .bottom {
+                    img.bar {
+                        padding: 9.px;
 
-
-
+                    }
+                   
+                }
             }
-            
-           
+            .leftContainer {
+                background-color: $greenFlag;
+                min-height: 100vh;
+                width: 100%;
+                border: 3px solid black;
+                margin-top: 50px;
+                color: white;
+                > div {
+                    margin: 25px;
+                    font-size: 1.5rem;
+                }
+
+                h2 {
+                    margin-bottom: 15px;
+                }
+
+                
+            }
         }
     }
     footer {
@@ -238,54 +246,54 @@ html {
 
 // //  TABLET  ///////////////////////////////////////////////////////////////////////////
 
-// @media only screen and (min-width: 320px) {
-//     body,
-//     html {
-//         background-image: url(../imagesMenu/plaid.jpg);
-//         background-position: center;
-//         background-repeat: no-repeat;
-//         background-size: cover;
+@media only screen and (min-width: 320px) {
+    body,
+    html {
+        background-image: url(../imagesMenu/plaid.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-//         .gridContainer {
-//             grid-gap: 50px;
+        .gridContainer {
+            grid-gap: 50px;
 
-//             header {
-//                 .white {
-//                     #activePhone {
-//                         display: none;
-//                     }
-//                 }
-//             }
+            header {
+                .white {
+                    #activePhone {
+                        display: none;
+                    }
+                }
+            }
 
-//             main {
-//                 .freeDelivery {
-//                     .delivery {
-//                         border: 5px solid black;
-//                         height: 100px;
-//                         .icons {
-//                             width: 80px;
-//                             padding-top: 15px;
-//                         }
+            main {
+                .freeDelivery {
+                    .delivery {
+                        border: 5px solid black;
+                        height: 100px;
+                        .icons {
+                            width: 80px;
+                            padding-top: 15px;
+                        }
 
-//                         .center {
-//                             h3,
-//                             h5 {
-//                                 font-size: 2rem;
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-
-//             footer {
-//                 div {
-//                     pre {
-//                         font-size: 1.5rem;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+                        .center {
+                            h3,
+                            h5 {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+                    
+            footer {
+                div {
+                    pre {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
 
 // // DESKTOP  ///////////////////////////////////////////////////////////////////////////@include
